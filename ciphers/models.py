@@ -4,11 +4,10 @@ class Caesar(models.Model):
     caesar_text = models.CharField(max_length=500)
 
 class Atbash(models.Model):
-    atbash_test = model.CharField(max_length=500)
+    atbash_test = models.CharField(max_length=500)
 
 class Alphanumeric(models.Model):
-    alphanumeric_text = model.CharField(max_length=500)
+    alphanumeric_text = models.CharField(max_length=500)
 
-class Viginere(model.Model):
-    viginere_text = model.CharField(max_length=500)
-    
+class Viginere(models.Model):
+    viginere_text = models.CharField(max_length=500)

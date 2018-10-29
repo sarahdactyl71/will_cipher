@@ -2,9 +2,13 @@ from django.shortcuts import get_object_or_404, render
 
 from django.http import HttpResponse
 
+from .models import Caesar, Atbash, Alphanumeric, Viginere
+
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the ciphers index.")
+    caesar = Caesar.objects.all()
+    output = ', '.join([c.caesar_text for c in caesar])
+    return HttpResponse(output)
 
 # def show(request, cipher_id):
 #     cipher = get_object_or404(Question, pk=cipher_id)

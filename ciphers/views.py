@@ -8,11 +8,8 @@ from .models import Caesar, Atbash, Alphanumeric, Viginere
 
 def index(request):
     caesar = Caesar.objects.all()
-    template = loader.get_template('ciphers/index.html')
-    context = {
-        'caesar': caesar,
-    }
-    return HttpResponse(template.render(context, request))
+    context = {'caesar': caesar}
+    return render(request, 'ciphers/index.html', context)
 
 # def show(request, cipher_id):
 #     cipher = get_object_or404(Question, pk=cipher_id)

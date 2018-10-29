@@ -11,9 +11,9 @@ def index(request):
     context = {'caesar': caesar}
     return render(request, 'ciphers/index.html', context)
 
-# def show(request, cipher_id):
-#     cipher = get_object_or404(Question, pk=cipher_id)
-#     return render(request, 'ciphers/show.html', {'cipher': cipher})
+def show(request, caesar_id):
+    caesar = get_object_or_404(Caesar, pk=caesar_id)
+    return render(request, 'ciphers/show.html', {'caesar': caesar})
 #
 # def create(request, cipher_id):
 #     return HttpResponse()

@@ -1,0 +1,10 @@
+
+{% if caesar %}
+    <ul>
+    {% for c in caesar %}
+        <li><a href="/cipehrs/{{ caesar.id }}/">{{ caesar.caesar_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No ciphers are available.</p>
+{% endif %}

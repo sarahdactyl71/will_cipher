@@ -67,28 +67,28 @@ class CaesarTestCase(TestCase):
 
     def test_can_decode_shorts_ciphers(self):
         offset = 3
-        caesar_one = Caesar.object.create(caesar_text = 'IURP WKH ILUVW XQWLO WKH ODVW VHDUFK WKH')
-        caesar_two = Caesar.object.create(caesar_text = 'WKHP DOO ZHOFRPH WR JUDYLWB IDOOV')
-        caesar_three = Caesar.object.create(caesar_text = 'FRGHV RI FUHGLWV SDVW RQH PHDQV RQH VR VHDUFK')
+        caesar_one = Caesar.objects.create(caesar_text = 'IURP WKH ILUVW XQWLO WKH ODVW VHDUFK WKH')
+        caesar_two = Caesar.objects.create(caesar_text = 'WKHP DOO ZHOFRPH WR JUDYLWB IDOOV')
+        caesar_three = Caesar.objects.create(caesar_text = 'FRGHV RI FUHGLWV SDVW RQH PHDQV RQH VR VHDUFK')
         self.assertEqual(caesar_one.decode(offset), 'FROM THE FIRST UNTIL THE LAST SEARCH THE')
         self.assertEqual(caesar_two.decode(offset), 'THEM ALL WELCOME TO GRAVITY FALLS')
         self.assertEqual(caesar_three.decode(offset), 'CODES OF CREDITS PAST ONE MEANS ONE SO SEARCH')
 
     def test_can_decode_scaryoke_cipehrs(self):
         offset = 3
-        caesar_one = Caesar.object.create(caesar_text = 'TEV FP TBKAV PL MBOCBZQ')
-        caesar_two = Caesar.object.create(caesar_text = 'ZDWFK RXW')
-        caesar_three = Caesar.object.create(caesar_text = 'NLOO PH SOHDVH')
+        caesar_one = Caesar.objects.create(caesar_text = 'TEV FP TBKAV PL MBOCBZQ')
+        caesar_two = Caesar.objects.create(caesar_text = 'ZDWFK RXW')
+        caesar_three = Caesar.objects.create(caesar_text = 'NLOO PH SOHDVH')
         self.assertEqual(caesar_one.decode(offset), 'WHY IS WENDY SO PERFECT')
         self.assertEqual(caesar_two.decode(offset), 'WATCH OUT')
         self.assertEqual(caesar_three.decode(offset), 'KILL ME PLEASE')
 
     def test_can_decode_scaryoke_cipehrs(self):
         offset = 3
-        caesar_one = Caesar.object.create(caesar_text = 'ZLGGOH')
-        caesar_two = Caesar.object.create(caesar_text = 'VKLIWHU')
-        caesar_three = Caesar.object.create(caesar_text = 'ZKDWHYV')
-        caesar_four = Caesar.object.create(caesar_text = 'EHDUR)
+        caesar_one = Caesar.objects.create(caesar_text = 'ZLGGOH')
+        caesar_two = Caesar.objects.create(caesar_text = 'VKLIWHU')
+        caesar_three = Caesar.objects.create(caesar_text = 'ZKDWHYV')
+        caesar_four = Caesar.objects.create(caesar_text = 'EHDUR')
         self.assertEqual(caesar_one.decode(offset), 'WIDDLE')
         self.assertEqual(caesar_two.decode(offset), 'SHIFTER')
         self.assertEqual(caesar_three.decode(offset), 'WHATEVS')

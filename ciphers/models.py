@@ -1,6 +1,9 @@
 from django.db import models
 
 class Caesar(models.Model):
+
+    __init__(self):
+    
     caesar_text = models.CharField(max_length=500)
 
     # def encode(self, offset):

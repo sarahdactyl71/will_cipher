@@ -2,9 +2,11 @@ from django.db import models
 
 class Caesar(models.Model):
 
-    __init__(self):
-    
     caesar_text = models.CharField(max_length=500)
+
+    def __init__(self, offset, secret):
+        self.offset = offset
+        self.secret = secret
 
     # def encode(self, offset):
 

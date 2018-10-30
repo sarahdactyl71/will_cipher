@@ -73,3 +73,33 @@ class CaesarTestCase(TestCase):
         self.assertEqual(caesar_one.decode(3), 'FROM THE FIRST UNTIL THE LAST SEARCH THE')
         self.assertEqual(caesar_two.decode(3), 'THEM ALL WELCOME TO GRAVITY FALLS')
         self.assertEqual(caesar_three.decode(3), 'CODES OF CREDITS PAST ONE MEANS ONE SO SEARCH')
+
+    def test_can_decode_scaryoke_cipehrs(self):
+        offset = 3
+        caesar_one = Caesar.object.create(caesar_text = 'TEV FP TBKAV PL MBOCBZQ')
+        caesar_two = Caesar.object.create(caesar_text = 'ZDWFK RXW')
+        caesar_three = Caesar.object.create(caesar_text = 'NLOO PH SOHDVH')
+        self.assertEqual(caesar_one.decode(3), 'WHY IS WENDY SO PERFECT')
+        self.assertEqual(caesar_two.decode(3), 'WATCH OUT')
+        self.assertEqual(caesar_three.decode(3), 'KILL ME PLEASE')
+
+    def test_can_decode_scaryoke_cipehrs(self):
+        offset = 3
+        caesar_one = Caesar.object.create(caesar_text = 'ZLGGOH')
+        caesar_two = Caesar.object.create(caesar_text = 'VKLIWHU')
+        caesar_three = Caesar.object.create(caesar_text = 'ZKDWHYV')
+        caesar_four = Caesar.object.create(caesar_text = 'EHDUR)
+        self.assertEqual(caesar_one.decode(3), 'WIDDLE')
+        self.assertEqual(caesar_two.decode(3), 'SHIFTER')
+        self.assertEqual(caesar_three.decode(3), 'WHATEVS')
+        self.assertEqual(caesar_four.decode(3), 'BEARO')
+
+    def test_can_decode_soos_and_the_real_girl_cipher(self):
+        offset = 3
+        caesar = Caesar.objects.create(caesar_text = 'VWDQ LV QRW ZKDW KH VHHPV')
+        self.assertEqual(caesar.decode(3), 'STAN IS NOT WHAT HE SEEMS')
+
+    def test_can_decode_not_what_he_seems_cipher(self):
+        offset = 3
+        caesar = Caesar.objects.create(caesar_text = 'JXYDPHQW')
+        self.assertEqual(caesar.decode(3), 'GUVAMENT')

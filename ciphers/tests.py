@@ -65,4 +65,11 @@ class CaesarTestCase(TestCase):
         caesar = Caesar.objects.create(caesar_text = 'ELOO LV ZDWFKLQJ')
         self.assertEqual(caesar.decode(3), 'BILL IS WATCHING')
 
-    
+    def test_can_decode_shorts_ciphers(self):
+        offset = 3
+        caesar_one = Caesar.object.create(caesar_text = 'IURP WKH ILUVW XQWLO WKH ODVW VHDUFK WKH')
+        caesar_two = Caesar.object.create(caesar_text = 'WKHP DOO ZHOFRPH WR JUDYLWB IDOOV')
+        caesar_three = Caesar.object.create(caesar_text = 'FRGHV RI FUHGLWV SDVW RQH PHDQV RQH VR VHDUFK')
+        self.assertEqual(caesar_one.decode(3), 'FROM THE FIRST UNTIL THE LAST SEARCH THE')
+        self.assertEqual(caesar_two.decode(3), 'THEM ALL WELCOME TO GRAVITY FALLS')
+        self.assertEqual(caesar_three.decode(3), 'CODES OF CREDITS PAST ONE MEANS ONE SO SEARCH')

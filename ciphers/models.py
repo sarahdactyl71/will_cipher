@@ -6,7 +6,10 @@ class Caesar(models.Model):
 
     # def encode(self, offset):
 
-    # def decode(self, offset)
+    def decode(self, offset):
+        for letter in self.caesar_text:
+            print(letter)
+        return letter
 
 
 class Atbash(models.Model):

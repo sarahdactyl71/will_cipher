@@ -2,6 +2,9 @@ from django.db import models
 
 alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
+def rotate(letter, offset):
+    return letter[offset:] + letter[:offset]
+
 class Caesar(models.Model):
 
     caesar_text = models.CharField(max_length=500)

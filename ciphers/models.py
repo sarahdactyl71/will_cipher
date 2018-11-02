@@ -2,8 +2,8 @@ from django.db import models
 
 alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
-def rotate(letter, offset):
-    return letter[offset:] + letter[:offset]
+def rotate(list, offset):
+    return list[offset:] + list[:offset]
 
 class Caesar(models.Model):
 
@@ -12,9 +12,11 @@ class Caesar(models.Model):
     # def encode(self, offset):
 
     def decode(self, offset):
+        list = []
         for letter in self.caesar_text:
-            print(letter)
-        return letter
+            new_letter = rotate(alphabet, offset)
+            list.append(new_letter)
+        return list
 
 
 class Atbash(models.Model):

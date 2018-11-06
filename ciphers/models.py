@@ -13,8 +13,9 @@ class Caesar(models.Model):
 
     def decode(self, offset):
         list = []
+        new_alphabet = rotate(alphabet, offset)
         for letter in self.caesar_text:
-            new_alphabet = rotate(alphabet, offset)
+            import code; code.interact(local=dict(globals(), **locals()))
             new_letter = new_alphabet[alphabet[letter]]
             list.append(new_letter)
         return list

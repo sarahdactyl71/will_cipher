@@ -15,10 +15,15 @@ class Caesar(models.Model):
         list = []
         new_alphabet = rotate(alphabet, offset)
         for letter in self.caesar_text:
-            import code; code.interact(local=dict(globals(), **locals()))
-            new_letter = new_alphabet[alphabet[letter]]
-            list.append(new_letter)
-        return list
+            if letter not in alphabet:
+                list.append(letter)
+            else:
+                letter_index = new_alphabet.index(letter)
+                new_letter = alphabet[letter_index]
+                list.append(new_letter)
+            message = ''.join(list)
+        return message
+        import code; code.interact(local=dict(globals(), **locals()))
 
 
 class Atbash(models.Model):

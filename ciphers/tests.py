@@ -7,6 +7,8 @@ from .models import Caesar, Atbash, Alphanumeric, Viginere
 
 class CaesarTestCase(TestCase):
 
+    #decoding ciphers
+
     def can_decode_smaller_ciphers(self):
         offset = 3
         caesar_one = Caesar.objects.create(caesar_text ='OLHV')
@@ -94,6 +96,19 @@ class CaesarTestCase(TestCase):
         self.assertEqual(caesar_three.decode(offset), 'WHATEVS')
         self.assertEqual(caesar_four.decode(offset), 'BEARO')
 
+
+    def test_can_decode_soos_and_the_real_girl_cipher(self):
+        offset = 3
+        caesar = Caesar.objects.create(caesar_text ='VWDQ LV QRW ZKDW KH VHHPV')
+        self.assertEqual(caesar.decode(offset), 'STAN IS NOT WHAT HE SEEMS')
+
+    def test_can_decode_not_what_he_seems_cipher(self):
+        offset = 3
+        caesar = Caesar.objects.create(caesar_text ='JXYDPHQW')
+        self.assertEqual(caesar.decode(offset), 'GUVAMENT')
+
+    #encoding ciphers
+
     def test_can_encode_scaryoke_cipehrs(self):
         offset = 3
         caesar_one = Caesar.objects.create(caesar_text ='WIDDLE')
@@ -105,12 +120,16 @@ class CaesarTestCase(TestCase):
         self.assertEqual(caesar_three.encode(offset), 'ZKDWHYV')
         self.assertEqual(caesar_four.encode(offset), 'EHDUR')
 
-    def test_can_decode_soos_and_the_real_girl_cipher(self):
+    def test_can_encode_soos_and_the_real_girl_cipher(self):
         offset = 3
-        caesar = Caesar.objects.create(caesar_text ='VWDQ LV QRW ZKDW KH VHHPV')
-        self.assertEqual(caesar.decode(offset), 'STAN IS NOT WHAT HE SEEMS')
+        caesar = Caesar.objects.create(caesar_text ='STAN IS NOT WHAT HE SEEMS')
+        self.assertEqual(caesar.decode(offset), 'VWDQ LV QRW ZKDW KH VHHPV')
 
-    def test_can_decode_not_what_he_seems_cipher(self):
+    def test_can_encode_shorts_ciphers(self):
         offset = 3
-        caesar = Caesar.objects.create(caesar_text ='JXYDPHQW')
-        self.assertEqual(caesar.decode(offset), 'GUVAMENT')
+        caesar_one = Caesar.objects.create(caesar_text ='FROM THE FIRST UNTIL THE LAST SEARCH THE')
+        caesar_two = Caesar.objects.create(caesar_text ='THEM ALL WELCOME TO GRAVITY FALLS')
+        caesar_three = Caesar.objects.create(caesar_text ='CODES OF CREDITS PAST ONE MEANS ONE SO SEARCH')
+        self.assertEqual(caesar_one.decode(offset), 'IURP WKH ILUVW XQWLO WKH ODVW VHDUFK WKH')
+        self.assertEqual(caesar_two.decode(offset), 'WKHP DOO ZHOFRPH WR JUDYLWB IDOOV')
+        self.assertEqual(caesar_three.decode(offset), 'FRGHV RI FUHGLWV SDVW RQH PHDQV RQH VR VHDUFK')

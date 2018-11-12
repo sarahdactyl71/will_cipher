@@ -38,12 +38,12 @@ class CaesarTestCase(TestCase):
     def test_can_decode_headhunters_cipher(self):
         offset = 3
         caesar = Caesar.objects.create(caesar_text ="KH'V VWLOO LQ WKH YHQWV.")
-        self.assertEqual(caesar.decode(offset), "	HE'S STILL IN THE VENTS.")
+        self.assertEqual(caesar.decode(offset), "HE'S STILL IN THE VENTS.")
 
     def test_can_decode_the_hand_that_rocks_the_mabel_cipher(self):
         offset = 3
         caesar = Caesar.objects.create(caesar_text ="FDUOD, ZKB ZRQ'W BRX FDOO PH?")
-        self.assertEqual(caesar.decode(offset), "	CARLA, WHY WON'T YOU CALL ME?")
+        self.assertEqual(caesar.decode(offset), "CARLA, WHY WON'T YOU CALL ME?")
 
     def test_can_decode_the_incoveniencing_cipher(self):
         offset = 3

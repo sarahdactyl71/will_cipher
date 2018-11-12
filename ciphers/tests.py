@@ -94,6 +94,17 @@ class CaesarTestCase(TestCase):
         self.assertEqual(caesar_three.decode(offset), 'WHATEVS')
         self.assertEqual(caesar_four.decode(offset), 'BEARO')
 
+    def test_can_encode_scaryoke_cipehrs(self):
+        offset = 3
+        caesar_one = Caesar.objects.create(caesar_text ='WIDDLE')
+        caesar_two = Caesar.objects.create(caesar_text ='SHIFTER')
+        caesar_three = Caesar.objects.create(caesar_text ='WHATEVS')
+        caesar_four = Caesar.objects.create(caesar_text ='BEARO')
+        self.assertEqual(caesar_one.encode(offset), 'ZLGGOH')
+        self.assertEqual(caesar_two.encode(offset), 'VKLIWHU')
+        self.assertEqual(caesar_three.encode(offset), 'ZKDWHYV')
+        self.assertEqual(caesar_four.encode(offset), 'EHDUR')
+
     def test_can_decode_soos_and_the_real_girl_cipher(self):
         offset = 3
         caesar = Caesar.objects.create(caesar_text ='VWDQ LV QRW ZKDW KH VHHPV')

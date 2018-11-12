@@ -123,13 +123,13 @@ class CaesarTestCase(TestCase):
     def test_can_encode_soos_and_the_real_girl_cipher(self):
         offset = 3
         caesar = Caesar.objects.create(caesar_text ='STAN IS NOT WHAT HE SEEMS')
-        self.assertEqual(caesar.decode(offset), 'VWDQ LV QRW ZKDW KH VHHPV')
+        self.assertEqual(caesar.encode(offset), 'VWDQ LV QRW ZKDW KH VHHPV')
 
     def test_can_encode_shorts_ciphers(self):
         offset = 3
         caesar_one = Caesar.objects.create(caesar_text ='FROM THE FIRST UNTIL THE LAST SEARCH THE')
         caesar_two = Caesar.objects.create(caesar_text ='THEM ALL WELCOME TO GRAVITY FALLS')
         caesar_three = Caesar.objects.create(caesar_text ='CODES OF CREDITS PAST ONE MEANS ONE SO SEARCH')
-        self.assertEqual(caesar_one.decode(offset), 'IURP WKH ILUVW XQWLO WKH ODVW VHDUFK WKH')
-        self.assertEqual(caesar_two.decode(offset), 'WKHP DOO ZHOFRPH WR JUDYLWB IDOOV')
-        self.assertEqual(caesar_three.decode(offset), 'FRGHV RI FUHGLWV SDVW RQH PHDQV RQH VR VHDUFK')
+        self.assertEqual(caesar_one.encode(offset), 'IURP WKH ILUVW XQWLO WKH ODVW VHDUFK WKH')
+        self.assertEqual(caesar_two.encode(offset), 'WKHP DOO ZHOFRPH WR JUDYLWB IDOOV')
+        self.assertEqual(caesar_three.encode(offset), 'FRGHV RI FUHGLWV SDVW RQH PHDQV RQH VR VHDUFK')

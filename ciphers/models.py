@@ -9,7 +9,18 @@ class Caesar(models.Model):
 
     caesar_text = models.CharField(max_length=500)
 
-    # def encode(self, offset):
+    def encode(self, offset):
+        list = []
+        new_alphabet = rotate(alphabet, -offset)
+        for letter in self.caesar_text:
+            if letter not in alphabet:
+                list.append(letter)
+            else:
+                letter_index = new_alphabet.index(letter)
+                new_letter = alphabet[letter_index]
+                list.append(new_letter)
+            message = ''.join(list)
+        return message
 
     def decode(self, offset):
         list = []

@@ -10,9 +10,12 @@ class Caesar(models.Model):
     caesar_text = models.CharField(max_length=500)
 
     def encode(self, offset):
-        return self.decode(-offset)
+        return self.new_message(-offset)
 
     def decode(self, offset):
+        return self.new_message(offset)
+
+    def new_message(self, offset):
         list = []
         new_alphabet = rotate(alphabet, offset)
         for letter in self.caesar_text:
@@ -24,6 +27,7 @@ class Caesar(models.Model):
                 list.append(new_letter)
             message = ''.join(list)
         return message
+
         # import code; code.interact(local=dict(globals(), **locals()))
 
 

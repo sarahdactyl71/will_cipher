@@ -7,8 +7,8 @@ from .models import Caesar, Atbash, Alphanumeric, Viginere
 
 
 def index(request):
-    caesar = Caesar.objects.all()
-    context = {'caesar': caesar}
+    caesars = Caesar.objects.all()
+    context = {'caesars': caesars}
     return render(request, 'ciphers/index.html', context)
 
 def show(request, caesar_id):

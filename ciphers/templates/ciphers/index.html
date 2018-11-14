@@ -1,6 +1,6 @@
-{% if caesar %}
+{% if caesars %}
     <ul>
-    {% for c in caesar %}
+    {% for caesar in caesars %}
         <li><a href="/cipehrs/{{ caesar.id }}/">{{ caesar.caesar_text }}</a></li>
     {% endfor %}
     </ul>

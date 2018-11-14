@@ -76,7 +76,7 @@ class CaesarTestCase(TestCase):
         self.assertEqual(caesar_two.decode(offset), 'THEM ALL WELCOME TO GRAVITY FALLS')
         self.assertEqual(caesar_three.decode(offset), 'CODES OF CREDITS PAST ONE MEANS ONE SO SEARCH')
 
-    def test_can_decode_scaryoke_cipehrs(self):
+    def test_can_decode_scaryoke_ciphers(self):
         offset = 3
         caesar_one = Caesar.objects.create(caesar_text ='TEV FP TBKAV PL MBOCBZQ')
         caesar_two = Caesar.objects.create(caesar_text ='ZDWFK RXW')
@@ -85,7 +85,7 @@ class CaesarTestCase(TestCase):
         self.assertEqual(caesar_two.decode(offset), 'WATCH OUT')
         self.assertEqual(caesar_three.decode(offset), 'KILL ME PLEASE')
 
-    def test_can_decode_scaryoke_cipehrs(self):
+    def test_can_decode_scaryoke_ciphers(self):
         offset = 3
         caesar_one = Caesar.objects.create(caesar_text ='ZLGGOH')
         caesar_two = Caesar.objects.create(caesar_text ='VKLIWHU')
@@ -109,7 +109,7 @@ class CaesarTestCase(TestCase):
 
     #encoding ciphers
 
-    def test_can_encode_scaryoke_cipehrs(self):
+    def test_can_encode_scaryoke_ciphers(self):
         offset = 3
         caesar_one = Caesar.objects.create(caesar_text ='WIDDLE')
         caesar_two = Caesar.objects.create(caesar_text ='SHIFTER')

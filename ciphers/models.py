@@ -34,6 +34,10 @@ class Caesar(models.Model):
 
         # import code; code.interact(local=dict(globals(), **locals()))
 
+class CaesarsForm(ModelForm):
+    class Meta:
+        model = Caesar
+        fields = ['caesar_text']
 
 class Atbash(models.Model):
     atbash_text = models.CharField(max_length=500)

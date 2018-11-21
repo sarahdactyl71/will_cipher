@@ -15,9 +15,9 @@ def index(request):
 def show(request, caesar_id):
     caesar = get_object_or_404(Caesar, pk=caesar_id)
     return render(request, 'ciphers/show.html', {'caesar': caesar})
-
-class create(request):
-    caesar = Caesar.objects.new()
+#
+# class create(request):
+#     caesar = Caesar.objects.new()
 
 # def destroy(request, cipher_id):
 #     return HttpResponse()

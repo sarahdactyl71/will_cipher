@@ -1,10 +1,13 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 
 from django.http import HttpResponse
 from django.template import loader
 from django.views.generic.edit import CreateView
 
-from .models import Caesar, Atbash, Alphanumeric, Viginere
+from .models import Caesar, Atbash, Alphanumeric, Viginere, CaesarsForm
+
+# from django.conf import settings
+# from .utils import parse_json_for_data, get_user_creds
 
 
 def index(request):

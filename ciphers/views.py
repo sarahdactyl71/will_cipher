@@ -18,9 +18,13 @@ def index(request):
 def show(request, caesar_id):
     caesar = get_object_or_404(Caesar, pk=caesar_id)
     return render(request, 'ciphers/show.html', {'caesar': caesar})
-#
-# class create(request):
-#     caesar = Caesar.objects.new()
+
+def create(request, template_name='contact_api/caesar_form.html'):
+    form = CaesarsForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('ciphers:index')
+    return render(request, template_name, {'form': form})
 
 # def destroy(request, cipher_id):
 #     return HttpResponse()

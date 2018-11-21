@@ -19,7 +19,7 @@ def show(request, caesar_id):
     caesar = get_object_or_404(Caesar, pk=caesar_id)
     return render(request, 'ciphers/show.html', {'caesar': caesar})
 
-def create(request, template_name='contact_api/caesar_form.html'):
+def create(request, template_name='ciphers/caesar_form.html'):
     form = CaesarsForm(request.POST or None)
     if form.is_valid():
         form.save()

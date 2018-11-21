@@ -1,2 +1,7 @@
 <h2>Caesar Message</h2>
-  {{ caesar.caesar_text }}
+  {{ caesar }}
+
+<a href="{% url 'ciphers:update' caesar.id %}">Update Caesar</a><br><br>
+<a href="{% url 'ciphers:delete' caesar.id %}">Delete Caesar</a><br><br>
+
+<a href="{% url 'ciphers:index' %}">Back to list of Caesars</a>

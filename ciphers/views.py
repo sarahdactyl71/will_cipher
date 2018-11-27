@@ -31,7 +31,7 @@ def update(request, caesar_id, template_name='ciphers/caesar_form.html'):
     return render(request, template_name, {'form': form})
 
 def delete(request, caesar_id, template_name='ciphers/caesar_delete.html'):
-    caesar = get_object_or_404(Contact, pk=caesar_id)
+    caesar = get_object_or_404(Caesar, pk=caesar_id)
     if request.method=='POST':
         caesar.delete()
         return redirect('ciphers:index')

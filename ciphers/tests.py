@@ -164,4 +164,18 @@ class AtbashTestCase(TestCase):
 
     def test_can_decode_boss_mabel(self):
         atbash = Atbash.objects.create(atbash_text = 'SVZEB RH GSV SVZW GSZG DVZIH GSV UVA.')
-        self.assertEqua(atbash.decode(), 'HEAVY IS THE HEAD THAT WEARS THE FEZ.')
+        self.assertEqual(atbash.decode(), 'HEAVY IS THE HEAD THAT WEARS THE FEZ.')
+
+    def test_can_decode_sock_opera(self):
+        atbash_one = Atbash.objects.create(atbash_text = 'KFIV VMVITB, MLG HPRM ZMW YLMV')
+        atbash_two = Atbash.objects.create(atbash_text = 'IRHRMT ORPV GSV HSVKZIW GLMV')
+        self.assertEqual(atbash_one.decode(), 'PURE ENERGY, NOT SKIN AND BONE')
+        self.assertEqual(atbash_two.decode(), 'RISING LIKE THE SHEPARD TONE')
+
+    def test_can_decode_society_of_the_blind_eye(self):
+        atbash = Atbash.objects.create(atbash_text = 'YROO XRKSVI! GIRZMTOV!')
+        self.assertEqual(atbash.decode(), 'BILL CIPHER! TRIANGLE!')
+
+    def test_can_decode_a_tale_of_two_stans(self):
+        atbash = Atbash.objects.create(atbash_text = 'YROO XRKSVI GIRZMTOV')
+        self.assertEqual(atbash.decode(), 'BILL CIPHER TRIANGLE')

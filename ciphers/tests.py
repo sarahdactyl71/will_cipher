@@ -195,3 +195,11 @@ class AtbashTestCase(TestCase):
     def test_can_encode_fight_fighters(self):
         atbash = Atbash.objects.create(atbash_text = 'SORRY, DIPPER, BUT YOUR WENDY IS IN ANOTHER CASTLE.')
         self.assertEqual(atbash.encode(), 'HLIIB, WRKKVI, YFG BLFI DVMWB RH RM ZMLGSVI XZHGOV.')
+
+#Testing for A1Z26(Alphanumeric) Cipher
+
+class AlphanumericTestCase(TestCase):
+
+    def test_can_decode_bottomless_pit(self):
+        alpha = Alphanumeric.objects.create(alphanumeric_text = "14-5-24-20 21-16: 6-15-15-20-2-15-20 20-23-15: 7-18-21-14-11-12-5'19 7-18-5-22-5-14-7-5.")
+        self.assertEqual(alpha.decode(), NEXT UP: FOOTBOT TWO: GRUNKLE'S GREVENGE.)

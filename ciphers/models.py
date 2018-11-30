@@ -32,7 +32,6 @@ class Caesar(models.Model):
             message = ''.join(list)
         return message
 
-        # import code; code.interact(local=dict(globals(), **locals()))
 
 class CaesarsForm(ModelForm):
     class Meta:
@@ -40,7 +39,21 @@ class CaesarsForm(ModelForm):
         fields = ['caesar_text']
 
 class Atbash(models.Model):
+
     atbash_text = models.CharField(max_length=500)
+
+    def decode(self):
+        list = []
+        backwards_alphabet = alphabet.reverse()
+        for character in self.atbash_text:
+            letter_index = backwards_alphabet.index(character)
+            new_letter = alphabet[letter_index]
+            list.append(new_letter)
+            message = ''.join(list)
+            # import code; code.interact(local=dict(globals(), **locals()))
+        return message
+
+
 
 class Alphanumeric(models.Model):
     alphanumeric_text = models.CharField(max_length=500)

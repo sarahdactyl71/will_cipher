@@ -179,3 +179,19 @@ class AtbashTestCase(TestCase):
     def test_can_decode_a_tale_of_two_stans(self):
         atbash = Atbash.objects.create(atbash_text = 'YROO XRKSVI GIRZMTOV')
         self.assertEqual(atbash.decode(), 'BILL CIPHER TRIANGLE')
+
+    def test_can_encode_double_dipper(self):
+        atbash = Atbash.objects.create(atbash_text = 'PAPER JAM DIPPER SAYS: "AUUGHWXQHGADSADUH!"')
+        self.assertEqual(atbash.encode(), 'KZKVI QZN WRKKVI HZBH: "ZFFTSDCJSTZWHZWFS!"')
+
+    def test_can_encode_irrational_treasure(self):
+        atbash = Atbash.objects.create(atbash_text = 'E. PLURIBUS TREMBLEY.')
+        self.assertEqual(atbash.encode(), 'V. KOFIRYFH GIVNYOVB.')
+
+    def test_can_encode_the_time_travelers_pig(self):
+        atbash = Atbash.objects.create(atbash_text = 'NOT H.G. WELLS APPROVED.')
+        self.assertEqual(atbash.encode(), 'MLG S.T. DVOOH ZKKILEVW.')
+
+    def test_can_encode_fight_fighters(self):
+        atbash = Atbash.objects.create(atbash_text = 'SORRY, DIPPER, BUT YOUR WENDY IS IN ANOTHER CASTLE.')
+        self.assertEqual(atbash.encode(), 'HLIIB, WRKKVI, YFG BLFI DVMWB RH RM ZMLGSVI XZHGOV.')

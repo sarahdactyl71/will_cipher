@@ -56,6 +56,17 @@ class Atbash(models.Model):
         return message
         # import code; code.interact(local=dict(globals(), **locals()))
 
+    def encode(self):
+        list = []
+        for character in self.atbash_text:
+            if character not in alphabet:
+                list.append(character)
+            else:
+                character_index = alphabet.index(character)
+                new_character = backwards_alphabet[character_index]
+                list.append(new_character)
+            message = ''.join(list)
+        return message
 
 class Alphanumeric(models.Model):
     alphanumeric_text = models.CharField(max_length=500)

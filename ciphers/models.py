@@ -2,6 +2,7 @@ from django.db import models
 from django.forms import ModelForm
 
 alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+backwards_alphabet = ['Z', 'Y', 'X', 'W', 'V', 'U', 'T', 'S', 'R', 'Q', 'P', 'O', 'N', 'M', 'L', 'K', 'J', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A']
 
 def rotate(list, offset):
     return list[offset:] + list[:offset]
@@ -44,11 +45,13 @@ class Atbash(models.Model):
 
     def decode(self):
         list = []
-        backwards_alphabet = alphabet.reverse()
         for character in self.atbash_text:
-            letter_index = backwards_alphabet.index(character)
-            new_letter = alphabet[letter_index]
-            list.append(new_letter)
+            if character not in alphabet:
+                list.append(character)
+            else:
+                character_index = backwards_alphabet.index(character)
+                new_character = alphabet[character_index]
+                list.append(new_character)
             message = ''.join(list)
             # import code; code.interact(local=dict(globals(), **locals()))
         return message

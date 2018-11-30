@@ -133,3 +133,35 @@ class CaesarTestCase(TestCase):
         self.assertEqual(caesar_one.encode(offset), 'IURP WKH ILUVW XQWLO WKH ODVW VHDUFK WKH')
         self.assertEqual(caesar_two.encode(offset), 'WKHP DOO ZHOFRPH WR JUDYLWB IDOOV')
         self.assertEqual(caesar_three.encode(offset), 'FRGHV RI FUHGLWV SDVW RQH PHDQV RQH VR VHDUFK')
+
+#TESTING FOR THE ATBASH CIPHER
+
+class AtbashTestCase(TestCase):
+
+    def test_decodes_double_dipper(self):
+        atbash = Atbash.objects.create(atbash_text = 'KZKVI QZN WRKKVI HZBH: "ZFFTSDCJSTZWHZWFS!"')
+        self.assertEqual(atbash.decode(), 'PAPER JAM DIPPER SAYS: "AUUGHWXQHGADSADUH!"')
+
+    def test_can_decode_irrational_treasure(self):
+        atbash = Atbash.objects.create(atbash_text = 'V. KOFIRYFH GIVNYOVB.')
+        self.assertEqual(atbash.decode(), 'E. PLURIBUS TREMBLEY.')
+
+    def test_can_decode_the_time_travelers_pig(self):
+        atbash = Atbash.objects.create(atbash_text = 'MLG S.T. DVOOH ZKKILEVW.')
+        self.assertEqual(atbash.decode(), 'NOT H.G. WELLS APPROVED.')
+
+    def test_can_decode_fight_fighters(self):
+        atbash = Atbash.objects.create(atbash_text = 'HLIIB, WRKKVI, YFG BLFI DVMWB RH RM ZMLGSVI XZHGOV.')
+        self.assertEqual(atbash.decode(), 'SORRY, DIPPER, BUT YOUR WENDY IS IN ANOTHER CASTLE.')
+
+    def test_can_decode_little_dipper(self):
+        atbash = Atbash.objects.create(atbash_text = 'GSV RMERHRYOV DRAZIW RH DZGXSRMT.')
+        self.assertEqual(atbash.decode(), 'THE INVISIBLE WIZARD IS WATCHING.')
+
+    def test_can_decode_summerween(self):
+        atbash = Atbash.objects.create(atbash_text = 'YILFTSG GL BLF YB SLNVDLIP: GSV XZMWB.')
+        self.assertEqual(atbash.decode(), 'BROUGHT TO YOU BY HOMEWORK: THE CANDY.')
+
+    def test_can_decode_boss_mabel(self):
+        atbash = Atbash.objects.create(atbash_text = 'SVZEB RH GSV SVZW GSZG DVZIH GSV UVA.')
+        self.assertEqua(atbash.decode(), 'HEAVY IS THE HEAD THAT WEARS THE FEZ.')

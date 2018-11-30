@@ -1,6 +1,8 @@
 <h2>Caesar Message</h2>
   {{ caesar }}
 
+  {# { caesar.decode(3) } #}
+
 
 <a href="{% url 'ciphers:update' caesar.id %}">Update Caesar</a><br><br>
 <a href="{% url 'ciphers:delete' caesar.id %}">Delete Caesar</a><br><br>

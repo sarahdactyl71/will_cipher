@@ -202,4 +202,30 @@ class AlphanumericTestCase(TestCase):
 
     def test_can_decode_bottomless_pit(self):
         alpha = Alphanumeric.objects.create(alphanumeric_text = "14-5-24-20 21-16: 6-15-15-20-2-15-20 20-23-15: 7-18-21-14-11-12-5'19 7-18-5-22-5-14-7-5.")
-        self.assertEqual(alpha.decode(), NEXT UP: FOOTBOT TWO: GRUNKLE'S GREVENGE.)
+        self.assertEqual(alpha.decode(), "NEXT UP: FOOTBOT TWO: GRUNKLE'S GREVENGE.")
+
+    def test_can_decode_the_deep_end(self):
+        alpha = Alphanumeric.objects.create(alphanumeric_text = '22-9-22-1-14 12-15-19 16-1-20-15-19 4-5 12-1 16-9-19-3-9-14-1.')
+        self.assertEqual(alpha.decode(), 'VIVAN LOS PATOS DE LA PISCINA.')
+
+    def test_can_decode_carpet_diem(self):
+        alpha = Alphanumeric.objects.create(alphanumeric_text = '2-21-20 23-8-15 19-20-15-12-5 20-8-5 3-1-16-5-18-19?')
+        self.assertEqual(alpha.decode(), 'BUT WHO STOLE THE CAPERS?')
+
+    def test_can_decode_boyz_crazy(self):
+        alpha = Alphanumeric.object.create(alphanumeric_text = '8-1-16-16-25 14-15-23, 1-18-9-5-12?')
+        self.assertEqual(alpha.decode(), 'HAPPY NOW, ARIEL?')
+
+    def test_land_before_swine(self):
+        alpha = Alphanumeric.objects.create(alphanumeric_text = '9-20 23-15-18-11-19 6-15-18 16-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-7-19!')
+        self.assertEqual(alpha.decode(), 'IT WORKS FOR PIIIIIIIIIIIIIIIIIGS!')
+
+    def test_can_decode_dreamscapers(self):
+        alpha = Alphanumeric.objects.create(alphanumeric_text = '20-15 2-5 3-15-14-20-9-14-21-5-4...')
+        self.assertEqual(alpha.decode(), 'TO BE CONTINUED...')
+
+    def test_can_decode_gideon_rises(self):
+        alpha_one = Alphanumeric.objects.create(alphanumeric_text = '18-5-22-5-18-19-5 20-8-5 3-9-16-8-5-18-19')
+        alpha_two = Alphanumeric.objects.create(alphanumeric_text = '5-19-23-6-21-16 18-9-6 4-16-19 22-12-15-10-20-19-25-19')
+        self.assertEqual(alpha_one.decode(), 'REVERSE THE CIPHERS')
+        self.assertEqual(alpha_one.decode(), 'SEARCH FOR THE BLINDEYE')

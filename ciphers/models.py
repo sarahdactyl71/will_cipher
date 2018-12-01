@@ -1,5 +1,6 @@
 from django.db import models
 from django.forms import ModelForm
+import re
 
 alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 backwards_alphabet = ['Z', 'Y', 'X', 'W', 'V', 'U', 'T', 'S', 'R', 'Q', 'P', 'O', 'N', 'M', 'L', 'K', 'J', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A']
@@ -54,7 +55,6 @@ class Atbash(models.Model):
                 list.append(new_character)
             message = ''.join(list)
         return message
-        # import code; code.interact(local=dict(globals(), **locals()))
 
     def encode(self):
         list = []
@@ -69,7 +69,13 @@ class Atbash(models.Model):
         return message
 
 class Alphanumeric(models.Model):
+
     alphanumeric_text = models.CharField(max_length=500)
+
+    def decode(self):
+        list = re.findall(r"[\w']+", self.alphanumeric_text)
+        import code; code.interact(local=dict(globals(), **locals()))
+
 
 class Viginere(models.Model):
     viginere_text = models.CharField(max_length=500)

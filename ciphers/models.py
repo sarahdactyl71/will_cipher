@@ -74,6 +74,7 @@ class Alphanumeric(models.Model):
 
     def decode(self):
         list = re.findall(r"[\w']+", self.alphanumeric_text)
+        #look more into regular expressions that can keep the spaces
         import code; code.interact(local=dict(globals(), **locals()))
 
 

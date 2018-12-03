@@ -84,7 +84,6 @@ class Alphanumeric(models.Model):
         character_split = re.split('(\W)', self.alphanumeric_text)
         while '-' in character_split: character_split.remove('-')
         for character in character_split:
-            # import code; code.interact(local=dict(globals(), **locals()))
             if character in special_chars:
                 list.append(character)
             else:
@@ -98,10 +97,16 @@ class Alphanumeric(models.Model):
         list = []
         for character in self.alphanumeric_text:
             if character not in alphabet:
-                list.append(character)
+                if list[-1] not in alphabet and list[-1] != '-':
+                    list.append(character)
+                else:
+                    list.pop()
+                    list.append(character)
+                # import code; code.interact(local=dict(globals(), **locals()))
             else:
                 number = str(alphabet.index(character) + 1)
                 list.append(number)
+                list.append('-')
             message = ''.join(list)
         return message
 

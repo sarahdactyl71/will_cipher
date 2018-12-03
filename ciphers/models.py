@@ -75,6 +75,9 @@ class Alphanumeric(models.Model):
 
     alphanumeric_text = models.CharField(max_length=500)
 
+    def __str__(self):
+        return self.alphanumeric_text
+
     def decode(self):
         list = re.findall(r"[\S']+", self.alphanumeric_text)
         list = re.findall(r"[\w']+", self.alphanumeric_text)
@@ -83,4 +86,8 @@ class Alphanumeric(models.Model):
 
 
 class Viginere(models.Model):
+
     viginere_text = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.viginere_text

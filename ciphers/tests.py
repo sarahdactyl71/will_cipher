@@ -227,3 +227,15 @@ class AlphanumericTestCase(TestCase):
     def test_can_decode_gideon_rises(self):
         alpha_one = Alphanumeric.objects.create(alphanumeric_text = '18-5-22-5-18-19-5 20-8-5 3-9-16-8-5-18-19')
         self.assertEqual(alpha_one.decode(), 'REVERSE THE CIPHERS')
+
+    def test_can_encode_bottomless_pit(self):
+        alpha = Alphanumeric.objects.create(alphanumeric_text = "NEXT UP: FOOTBOT TWO: GRUNKLE'S GREVENGE.")
+        self.assertEqual(alpha.encode(), "14-5-24-20 21-16: 6-15-15-20-2-15-20 20-23-15: 7-18-21-14-11-12-5'19 7-18-5-22-5-14-7-5.")
+
+    def test_can_encode_the_deep_end(self):
+        alpha = Alphanumeric.objects.create(alphanumeric_text = 'VIVAN LOS PATOS DE LA PISCINA.')
+        self.assertEqual(alpha.encode(), '22-9-22-1-14 12-15-19 16-1-20-15-19 4-5 12-1 16-9-19-3-9-14-1.')
+
+    def test_can_encode_carpet_diem(self):
+        alpha = Alphanumeric.objects.create(alphanumeric_text = 'BUT WHO STOLE THE CAPERS?')
+        self.assertEqual(alpha.encode(), '2-21-20 23-8-15 19-20-15-12-5 20-8-5 3-1-16-5-18-19?')

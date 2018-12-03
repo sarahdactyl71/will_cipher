@@ -80,13 +80,20 @@ class Alphanumeric(models.Model):
 
     def decode(self):
         list = []
+        special_chars = ['.',':',' ',"'",'!','?']
         character_split = re.split('(\W)', self.alphanumeric_text)
-        import code; code.interact(local=dict(globals(), **locals()))
         for character in character_split:
-            if character not in alphabet:
+            if character in special_chars:
                 list.append(character)
+            elif character == '-':
+                next
             else:
-                print(character)
+                character = int(character)
+                letter = alphabet[character - 1]
+                # import code; code.interact(local=dict(globals(), **locals()))
+                list.append(letter)
+            message = ''.join(list)
+        return message
 
 
 

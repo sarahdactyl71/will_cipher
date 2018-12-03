@@ -226,6 +226,4 @@ class AlphanumericTestCase(TestCase):
 
     def test_can_decode_gideon_rises(self):
         alpha_one = Alphanumeric.objects.create(alphanumeric_text = '18-5-22-5-18-19-5 20-8-5 3-9-16-8-5-18-19')
-        alpha_two = Alphanumeric.objects.create(alphanumeric_text = '5-19-23-6-21-16 18-9-6 4-16-19 22-12-15-10-20-19-25-19')
         self.assertEqual(alpha_one.decode(), 'REVERSE THE CIPHERS')
-        self.assertEqual(alpha_one.decode(), 'SEARCH FOR THE BLINDEYE')

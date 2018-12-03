@@ -79,10 +79,15 @@ class Alphanumeric(models.Model):
         return self.alphanumeric_text
 
     def decode(self):
-        list = re.findall(r"[\S']+", self.alphanumeric_text)
-        list = re.findall(r"[\w']+", self.alphanumeric_text)
-        #look more into regular expressions that can keep the spaces
+        list = []
+        character_split = re.split('(\W)', self.alphanumeric_text)
         import code; code.interact(local=dict(globals(), **locals()))
+        for character in character_split:
+            if character not in alphabet:
+                list.append(character)
+            else:
+                print(character)
+
 
 
 class Viginere(models.Model):

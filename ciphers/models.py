@@ -94,6 +94,16 @@ class Alphanumeric(models.Model):
             message = ''.join(list)
         return message
 
+    def encode(self):
+        list = []
+        for character in self.alphanumeric_text:
+            if character not in alphabet:
+                list.append(character)
+            else:
+                number = str(alphabet.index(character) + 1)
+                list.append(number)
+            message = ''.join(list)
+        return message
 
 
 class Viginere(models.Model):

@@ -213,7 +213,7 @@ class AlphanumericTestCase(TestCase):
         self.assertEqual(alpha.decode(), 'BUT WHO STOLE THE CAPERS?')
 
     def test_can_decode_boyz_crazy(self):
-        alpha = Alphanumeric.object.create(alphanumeric_text = '8-1-16-16-25 14-15-23, 1-18-9-5-12?')
+        alpha = Alphanumeric.objects.create(alphanumeric_text = '8-1-16-16-25 14-15-23, 1-18-9-5-12?')
         self.assertEqual(alpha.decode(), 'HAPPY NOW, ARIEL?')
 
     def test_land_before_swine(self):

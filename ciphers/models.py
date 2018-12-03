@@ -44,6 +44,9 @@ class Atbash(models.Model):
 
     atbash_text = models.CharField(max_length=500)
 
+    def __str__(self):
+        return self.atbash_text
+
     def decode(self):
         list = []
         for character in self.atbash_text:
@@ -73,6 +76,7 @@ class Alphanumeric(models.Model):
     alphanumeric_text = models.CharField(max_length=500)
 
     def decode(self):
+        list = re.findall(r"[\S']+", self.alphanumeric_text)
         list = re.findall(r"[\w']+", self.alphanumeric_text)
         #look more into regular expressions that can keep the spaces
         import code; code.interact(local=dict(globals(), **locals()))

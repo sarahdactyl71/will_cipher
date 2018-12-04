@@ -8,7 +8,7 @@ backwards_alphabet = ['Z', 'Y', 'X', 'W', 'V', 'U', 'T', 'S', 'R', 'Q', 'P', 'O'
 def alphabet_grid():
     offset = 0
     grid = []
-    while i < 26:
+    while offset < 26:
         row = rotate(alphabet, offset)
         grid.append(row)
         offset += 1
@@ -120,9 +120,12 @@ class Alphanumeric(models.Model):
 
 
 class Vigenere(models.Model):
-    # import code; code.interact(local=dict(globals(), **locals()))
 
     vigenere_text = models.CharField(max_length=500)
 
     def __str__(self):
         return self.vigenere_text
+
+    def decode(keyword):
+        import code; code.interact(local=dict(globals(), **locals()))
+        print(alphabet_grid())

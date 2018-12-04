@@ -281,7 +281,7 @@ class VigenereTestCase(TestCase):
 
     def test_can_decode_blendins_game(self):
         keyword = 'CAPACITOR'
-        vigenere = Vigenere.objec ts.create(vigenere_text = "FOC'T FW MVV VIBE EZBAV KF NOW KTB'K FO IHG BBAV VIBE.")
+        vigenere = Vigenere.objects.create(vigenere_text = "FOC'T FW MVV VIBE EZBAV KF NOW KTB'K FO IHG BBAV VIBE.")
         assertEqual(vigenere.decode(keyword), "DON’T DO THE TIME CRIME IF YOU CAN’T DO THE TIME TIME.")
 
     def test_can_decode_the_love_god(self):
@@ -351,3 +351,5 @@ class VigenereTestCase(TestCase):
         vigenere_two = Vigenere.objects.create(vigenre_text = 'GLCOPRP GOOGWMJ FXZWG')
         assertEqual(vigenere_one.decode(keyword_one), 'SECRETS LOST AND STATUES FOUND BEYOND THE RUSTY GATES')
         assertEqual(vigenere_two.decode(keyword_two), 'GOODBYE GRAVITY FALLS')
+
+#TESTING FOR COMBINED CIPHERS

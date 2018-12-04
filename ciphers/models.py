@@ -5,6 +5,15 @@ import re
 alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 backwards_alphabet = ['Z', 'Y', 'X', 'W', 'V', 'U', 'T', 'S', 'R', 'Q', 'P', 'O', 'N', 'M', 'L', 'K', 'J', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A']
 
+def alphabet_grid():
+    offset = 0
+    grid = []
+    while i < 26:
+        row = rotate(alphabet, offset)
+        grid.append(row)
+        offset += 1
+    return grid
+
 def rotate(list, offset):
     return list[offset:] + list[:offset]
 

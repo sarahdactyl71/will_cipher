@@ -126,6 +126,6 @@ class Vigenere(models.Model):
     def __str__(self):
         return self.vigenere_text
 
-    def decode(keyword):
+    def decode(self, keyword):
         import code; code.interact(local=dict(globals(), **locals()))
         print(alphabet_grid())

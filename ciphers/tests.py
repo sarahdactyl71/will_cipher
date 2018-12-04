@@ -3,7 +3,7 @@ import datetime
 from django.test import TestCase
 from django.utils import timezone
 
-from .models import Caesar, Atbash, Alphanumeric, Viginere
+from .models import Caesar, Atbash, Alphanumeric, Vigenere
 
 class CaesarTestCase(TestCase):
 
@@ -239,3 +239,32 @@ class AlphanumericTestCase(TestCase):
     def test_can_encode_carpet_diem(self):
         alpha = Alphanumeric.objects.create(alphanumeric_text = 'BUT WHO STOLE THE CAPERS?')
         self.assertEqual(alpha.encode(), '2-21-20 23-8-15 19-20-15-12-5 20-8-5 3-1-16-5-18-19?')
+
+# TESTING FOR VIGENERE CIPHER
+
+class VigenereTestCase(TestCase):
+
+    def test_can_decode_scaryoke_ciphers(self):
+        keyword = 'WIDDLE'
+        vigenere = Vigenere.objects.create(vigenere_text = 'SMOFZQA JDFV')
+        assertEqual(vigenere.encode(keyword), 'WELCOME BACK')
+
+    def test_can_decode_int_the_bunker(self):
+        keyword = 'SHIFTER'
+        vigenere = Vigener.objects.create(vigenere_text = 'OOIY DMEV VN IBWRKAMW BRUWLL')
+        assertEqual(vigenere.decode(keyword), 'WHAT KIND OF DISASTER INDEED')
+
+    def test_can_decode_the_golf_war(self):
+        keyword = 'WHATEVS'
+        vigenere = Vigenere.objects.create(vigenere_text = 'NLMXQWWN IIZ LZFNF')
+        assertEqual(vignere.decode(keyword), 'REMEMBER BIG HENRY')
+
+    def test_can_decode_sock_opera(self):
+        keyword = 'CIPHER'
+        vigenere = Vigenere.objects.create(vigenere_text = 'YM’KL ECN PPK WFOM UBR KQVXNLK, DCI SIK’U VDA JFTOTA AYQ BWL VVCT "EBTGGB BHWKGZH" HVV: TMEASZFA LOS YCDT PRWKTIYEKGL DBV XQDTYRDGVI')
+        assertEqual(vigenere.decode(keyword), 'WE’VE ALL HAD SOME FUN TONIGHT, BUT LET’S NOT FORGET WHO THE REAL "PUPPET MASTERS" ARE: REPTOIDS WHO HAVE INFILTRATED OUR GOVERNMENT')
+
+    def test_can_decode_soos_and_the_real_girl(self):
+        keyword = 'BEARO'
+        vigenere = Vigenre.objects.create(vigenre_text = 'BRTYMEMNX QBR HRRQPEE')
+        assertEqual(vigenere.decode(keyword), ANTHYDING CAN HADPLEN)

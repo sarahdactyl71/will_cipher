@@ -33,10 +33,10 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='Viginere',
+            name='Vigenere',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('viginere_text', models.CharField(max_length=500)),
+                ('vigenere_text', models.CharField(max_length=500)),
             ],
         ),
     ]

@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from django.views.generic.edit import CreateView
-from .models import Caesar, Atbash, Alphanumeric, Viginere, CaesarsForm
+from .models import Caesar, Atbash, Alphanumeric, Vigenere, CaesarsForm
 
 
 def index(request):

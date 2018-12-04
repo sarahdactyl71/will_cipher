@@ -102,7 +102,6 @@ class Alphanumeric(models.Model):
                 else:
                     list.pop()
                     list.append(character)
-                # import code; code.interact(local=dict(globals(), **locals()))
             else:
                 number = str(alphabet.index(character) + 1)
                 list.append(number)
@@ -111,9 +110,10 @@ class Alphanumeric(models.Model):
         return message
 
 
-class Viginere(models.Model):
+class Vigenere(models.Model):
+    # import code; code.interact(local=dict(globals(), **locals()))
 
-    viginere_text = models.CharField(max_length=500)
+    vigenere_text = models.CharField(max_length=500)
 
     def __str__(self):
-        return self.viginere_text
+        return self.vigenere_text

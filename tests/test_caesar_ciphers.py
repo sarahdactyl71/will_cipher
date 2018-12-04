@@ -3,7 +3,7 @@ import datetime
 from django.test import TestCase
 from django.utils import timezone
 
-from .models import Caesar, Atbash, Alphanumeric, Viginere
+from .models import Caesar, Atbash, Alphanumeric, Vigenere
 
 class CaesarTestCase(TestCase):
 

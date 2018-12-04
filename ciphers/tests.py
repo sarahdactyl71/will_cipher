@@ -257,7 +257,7 @@ class VigenereTestCase(TestCase):
     def test_can_decode_the_golf_war(self):
         keyword = 'WHATEVS'
         vigenere = Vigenere.objects.create(vigenere_text = 'NLMXQWWN IIZ LZFNF')
-        assertEqual(vignere.decode(keyword), 'REMEMBER BIG HENRY')
+        assertEqual(vigenere.decode(keyword), 'REMEMBER BIG HENRY')
 
     def test_can_decode_sock_opera(self):
         keyword = 'CIPHER'
@@ -267,4 +267,59 @@ class VigenereTestCase(TestCase):
     def test_can_decode_soos_and_the_real_girl(self):
         keyword = 'BEARO'
         vigenere = Vigenre.objects.create(vigenre_text = 'BRTYMEMNX QBR HRRQPEE')
-        assertEqual(vigenere.decode(keyword), ANTHYDING CAN HADPLEN)
+        assertEqual(vigenere.decode(keyword), 'ANTHYDING CAN HADPLEN')
+
+    def test_can_decode_little_gift_shop_of_horrors(self):
+        keyword = 'NONCANON'
+        vigenere = Vigenere.objectrs.create(vigenere_text = 'PVREK BIG QF. JCDQZRF’ ZNVEFH OBCX: "C BEWRS VVUTBFL BT BKNX CVAY BKNX CVAY BKNX"')
+        assertEqual(vigenere.decode(keyword), 'CHECK OUT DR. WADDLES’ LATEST BOOK: "A BRIEF HISTORY OF OINK OINK OINK OINK OINK"')
+
+    def test_can_decode_society_of_the_blind_eye(self):
+        keyword = 'ERASE'
+        vigenere = Vigenere.objects.create(vigenere_text = 'MXNGVEECW MW SLAWW. SUL FPZSK MW SOJMRX.')
+        assertEqual(vigenere.decode(keyword), 'IGNORANCE IS BLISS. BUT BLISS IS BORING.')
+
+    def test_can_decode_blendins_game(self):
+        keyword = 'CAPACITOR'
+        vigenere = Vigenere.objec ts.create(vigenere_text = "FOC'T FW MVV VIBE EZBAV KF NOW KTB'K FO IHG BBAV VIBE.")
+        assertEqual(vigenere.decode(keyword), "DON’T DO THE TIME CRIME IF YOU CAN’T DO THE TIME TIME.")
+
+    def test_can_decode_the_love_god(self):
+        keyword = 'GOATANDAPIG'
+        vigenere = Vigenere.objects.create(vigenere_text = 'O SAM KVGS.')
+        assertEqual(vigenere.decode(keyword), 'I EAT KIDS')
+
+    def test_can_decode_northwest_mansion_mystery(self):
+        keyword = 'CURSED'
+        vigenere = Vigenere.objects.create(vigenere_text = 'PYOL YS QH LLFDJW: UAH DNCVFW ZTCKW XKG WFFWWKNLLMRP? WISAGCXJ AR WKUISW! DPX WDSUKXR: LLH UBFO.')
+        assertEqual(vigenere.decode(keyword), 'NEXT UP ON UTBAHC: DID ALIENS WRITE THE CONSTITUTION? CRAWDADS IN TIARAS! AND FLORIDA: THE SHOW.')
+
+    def test_can_decode_not_what_he_seems(self):
+        keyword = 'STNLYMBL'
+        vigenere = Vigenere.ojbects.create(vigenere_text = 'LAR ZPUHTFTY XWEUPJR GHGZT')
+        assertEqual(vigenere.decode(keuyword), 'HE ORIGINAL MYSTERY TWINS')
+
+    def test_can_decode_a_tale_of_two_stans(self):
+        keyword = 'SIXER'
+        vigenere = Vigenere.objects.create(vigenere_text = 'TIZOLHAJSIW CKMMWZPMKQ: GLY KJQBH')
+        assertEqual(vigenere.decode(keyword), 'BACKUPSMORE UNIVERSITY: YOU TRIED')
+
+    def test_can_decode_dungeons_dungeons_and_more_dungeons(self):
+        keyword = 'RADMASTER'
+        vigenere = Vigenre.objects.create(vigenre_text = 'VXFQLKB-AYRTHHEJ!')
+        assertEqual(vigenere.decode(keyword), 'EXCELSI-WHATEVER!')
+
+    def test_can_decode_stanchurian_candidate(self):
+        keyword = 'WORKINIT'
+        vigenere = Vigenere.objects.create(vigenre_text = "CWZSQVQBEWZSQVQBEWZSQVQMPHKD 'MZ!")
+        assertEqual(vigenere.decode(keyword), "GIIIIIIIIIIIIIIIIIIIIIITTTTT 'EM!")
+
+    def test_can_decode_the_last_mabelcorn(self):
+        keyword = 'SCHMENDRICK'
+        vigenere = Vigenere.objects.create(vigenere_text = 'S UPYTYH DIP GAVO QETHI MCBK OHK XEXJB VRW YOUWCHIA VRSV OQ LRDIA')
+        assertEqual(vigenere.decode(keyword), 'A SIMPLE MAN WITH EAGER EARS MAY TRUST THE WHISPERS THAT HE HEARS')
+
+    def test_can_decode_roadside_attraction(self):
+        keyword = 'DOPPER'
+        vigenere = Vigenere.objects.create(vigenere_text = 'VCDH, PZNS P CSSOS VDPUHB GTXILSKTV, VYSCIYROZN USLQR WXW NDM WDQVZOGS, EEG PTUVZHBSTH R WOAZMEJ PJAPURU PCH JDGHN GRW OADRX WVT LEP')
+        assertEqual(vigenere)

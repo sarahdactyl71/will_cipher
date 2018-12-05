@@ -135,9 +135,12 @@ class Vigenere(models.Model):
         return keyword_length
 
     def repeat_keyword(self, keyword):
-        length = self.keyword_length
-        list = []
-        
+        length = self.keyword_length(keyword)
+        while len(keyword) < length:
+            keyword += keyword
+        keyword = keyword[:length]
+        return keyword
+
 
     def decode(self, keyword):
         new_keyword = self.repeat_keyword(keyword)

@@ -141,8 +141,19 @@ class Vigenere(models.Model):
         keyword = keyword[:length]
         return keyword
 
-
     def decode(self, keyword):
         new_keyword = self.repeat_keyword(keyword)
+        for character in self.vigenere_text:
+            list = []
+            if character not in alphabet:
+                list.append(character)
+            else:
+                for letter in new_keyword:
+                    letter_index = alphabet.index(character)
+                    
+
+
+            alphabet_index = alphabet.index(character)
+
         import code; code.interact(local=dict(globals(), **locals()))
         print(alphabet_grid())

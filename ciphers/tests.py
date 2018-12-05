@@ -244,17 +244,37 @@ class AlphanumericTestCase(TestCase):
 
 class VigenereTestCase(TestCase):
 
-    def test_can_decode_simple_case(self):
+    def test_can_encode_simple_case(self):
         keyword = 'GRAVITY'
         vigenere = Vigenere.objects.create(vigenere_text = 'MABELEATSSPRINKLES')
-        self.assertEqual(vigenere.decode(keyword), 'SRBZTXYZJSKZBLQCEN')
+        self.assertEqual(vigenere.encode(keyword), 'SRBZTXYZJSKZBLQCEN')
+
+    def test_can_encode_scaryoke_cipher(self):
+        keyword = 'WIDDLE'
+        vigenere = Vigenere.objects.create(vigenere_text = 'WELCOME BACK')
+        self.assertEqual(vigenere.encode(keyword), 'SMOFZQA JDFV')
+
+    def test_can_encode_into_the_bunker(self):
+        keyword = 'SHIFTER'
+        vigenere = Vigener.objects.create(vigenere_text = 'WHAT KIND OF DISASTER INDEED')
+        self.assertEqual(vigenere.encode(keyword), 'OOIY DMEV VN IBWRKAMW BRUWLL')
+
+    def test_can_encode_the_golf_war(self):
+        keyword = 'WHATEVS'
+        vigenere = Vigenere.objects.create(vigenere_text = 'REMEMBER BIG HENRY')
+        self.assertEqual(vigenere.encode(keyword), 'NLMXQWWN IIZ LZFNF'')
+
+    def test_can_encode_sock_opera(self):
+        keyword = 'CIPHER'
+        vigenere = Vigenere.objects.create(vigenere_text = 'WE’VE ALL HAD SOME FUN TONIGHT, BUT LET’S NOT FORGET WHO THE REAL "PUPPET MASTERS" ARE: REPTOIDS WHO HAVE INFILTRATED OUR GOVERNMENT')
+        self.assertEqual(vigenere.encode(keyword), 'YM’KL ECN PPK WFOM UBR KQVXNLK, DCI SIK’U VDA JFTOTA AYQ BWL VVCT "EBTGGB BHWKGZH" HVV: TMEASZFA LOS YCDT PRWKTIYEKGL DBV XQDTYRDGVI')
 
     def test_can_decode_scaryoke_ciphers(self):
         keyword = 'WIDDLE'
         vigenere = Vigenere.objects.create(vigenere_text = 'SMOFZQA JDFV')
-        self.assertEqual(vigenere.encode(keyword), 'WELCOME BACK')
+        self.assertEqual(vigenere.decode(keyword), 'WELCOME BACK')
 
-    def test_can_decode_int_the_bunker(self):
+    def test_can_decode_into_the_bunker(self):
         keyword = 'SHIFTER'
         vigenere = Vigener.objects.create(vigenere_text = 'OOIY DMEV VN IBWRKAMW BRUWLL')
         self.assertEqual(vigenere.decode(keyword), 'WHAT KIND OF DISASTER INDEED')

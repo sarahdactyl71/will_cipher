@@ -126,10 +126,20 @@ class Vigenere(models.Model):
     def __str__(self):
         return self.vigenere_text
 
+    def keyword_length(self, keyword):
+        list = []
+        for character in self.vigenere_text:
+            if character in alphabet:
+                list.append(character)
+            keyword_length = len(list)
+        return keyword_length
+
     def repeat_keyword(self, keyword):
-        message_length = len(self.vigenere_text)
-        import code; code.interact(local=dict(globals(), **locals()))
+        length = self.keyword_length
+        list = []
+        
 
     def decode(self, keyword):
         new_keyword = self.repeat_keyword(keyword)
+        import code; code.interact(local=dict(globals(), **locals()))
         print(alphabet_grid())

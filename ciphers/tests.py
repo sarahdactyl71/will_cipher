@@ -262,7 +262,7 @@ class VigenereTestCase(TestCase):
     def test_can_encode_the_golf_war(self):
         keyword = 'WHATEVS'
         vigenere = Vigenere.objects.create(vigenere_text = 'REMEMBER BIG HENRY')
-        self.assertEqual(vigenere.encode(keyword), 'NLMXQWWN IIZ LZFNF'')
+        self.assertEqual(vigenere.encode(keyword), 'NLMXQWWN IIZ LZFNF')
 
     def test_can_encode_sock_opera(self):
         keyword = 'CIPHER'

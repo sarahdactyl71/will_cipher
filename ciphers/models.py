@@ -141,9 +141,8 @@ class Vigenere(models.Model):
         keyword = keyword[:length]
         return keyword
 
-    def decode(self, keyword):
+    def encode(self, keyword):
         new_keyword = self.repeat_keyword(keyword)
-        #GRAVITYGRAVITYGRAV
         for character in self.vigenere_text:
             list = []
             if character not in alphabet:
@@ -151,5 +150,10 @@ class Vigenere(models.Model):
             else:
                 for letter in new_keyword:
                     #GRAVITYGRAVITYGRAV
-                    letter_index = alphabet.index(character)
-                    import code; code.interact(local=dict(globals(), **locals()))
+                    letter_index = alphabet.index(letter)
+                    character_index = alphabet.index(character)
+                    row = alphabet_grid()[character_index]
+                    encoded_letter = row[letter_index]
+                    list.append(encoded_letter)
+            return list
+            import code; code.interact(local=dict(globals(), **locals()))

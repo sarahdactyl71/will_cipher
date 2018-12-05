@@ -155,5 +155,6 @@ class Vigenere(models.Model):
                     row = alphabet_grid()[character_index]
                     encoded_letter = row[letter_index]
                     list.append(encoded_letter)
-            return list
+                message = ''.join(list)
+            return message
             import code; code.interact(local=dict(globals(), **locals()))

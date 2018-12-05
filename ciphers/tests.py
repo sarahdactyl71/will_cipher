@@ -256,7 +256,7 @@ class VigenereTestCase(TestCase):
 
     def test_can_encode_into_the_bunker(self):
         keyword = 'SHIFTER'
-        vigenere = Vigener.objects.create(vigenere_text = 'WHAT KIND OF DISASTER INDEED')
+        vigenere = Vigenere.objects.create(vigenere_text = 'WHAT KIND OF DISASTER INDEED')
         self.assertEqual(vigenere.encode(keyword), 'OOIY DMEV VN IBWRKAMW BRUWLL')
 
     def test_can_encode_the_golf_war(self):
@@ -276,7 +276,7 @@ class VigenereTestCase(TestCase):
 
     def test_can_decode_into_the_bunker(self):
         keyword = 'SHIFTER'
-        vigenere = Vigener.objects.create(vigenere_text = 'OOIY DMEV VN IBWRKAMW BRUWLL')
+        vigenere = Vigenere.objects.create(vigenere_text = 'OOIY DMEV VN IBWRKAMW BRUWLL')
         self.assertEqual(vigenere.decode(keyword), 'WHAT KIND OF DISASTER INDEED')
 
     def test_can_decode_the_golf_war(self):

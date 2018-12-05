@@ -4,6 +4,7 @@ import re
 
 alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 backwards_alphabet = ['Z', 'Y', 'X', 'W', 'V', 'U', 'T', 'S', 'R', 'Q', 'P', 'O', 'N', 'M', 'L', 'K', 'J', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A']
+special_chars = ['.',':',' ',"'",'!','?','',',']
 
 def alphabet_grid():
     offset = 0
@@ -89,7 +90,6 @@ class Alphanumeric(models.Model):
 
     def decode(self):
         list = []
-        special_chars = ['.',':',' ',"'",'!','?','',',']
         character_split = re.split('(\W)', self.alphanumeric_text)
         while '-' in character_split: character_split.remove('-')
         for character in character_split:
@@ -126,6 +126,10 @@ class Vigenere(models.Model):
     def __str__(self):
         return self.vigenere_text
 
-    def decode(self, keyword):
+    def repeat_keyword(self, keyword):
+        message_length = len(self.vigenere_text)
         import code; code.interact(local=dict(globals(), **locals()))
+
+    def decode(self, keyword):
+        new_keyword = self.repeat_keyword(keyword)
         print(alphabet_grid())

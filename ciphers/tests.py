@@ -244,6 +244,11 @@ class AlphanumericTestCase(TestCase):
 
 class VigenereTestCase(TestCase):
 
+    def test_can_decode_simple_case(self):
+        keyword = 'GRAVITY'
+        vigenere = Vigenere.objects.create(vigenere_text = 'MABELEATSSPRINKLES')
+        self.assertEqual(vigenere.decode(keyword), 'SRBZTXYZJSKZBLQCEN')
+
     def test_can_decode_scaryoke_ciphers(self):
         keyword = 'WIDDLE'
         vigenere = Vigenere.objects.create(vigenere_text = 'SMOFZQA JDFV')

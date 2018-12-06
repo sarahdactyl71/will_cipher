@@ -149,7 +149,6 @@ class Vigenere(models.Model):
                 list.append(character)
             else:
                 for keyword_letter in new_keyword:
-                    #GRAVITYGRAVITYGRAV
                     column_index = alphabet.index(keyword_letter)
                     character_index = alphabet.index(character)
                     row = alphabet_grid()[character_index]

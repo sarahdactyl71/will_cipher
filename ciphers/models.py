@@ -144,21 +144,9 @@ class Vigenere(models.Model):
     def encode(self, keyword):
         list = []
         new_keyword = self.repeat_keyword(keyword)
-        #GRAVITYGRAVITYGRAV
-        # for keyword_letter, message_letter in zip(new_keyword, self.vigenere_text):
+        for keyword_letter, message_letter in zip(new_keyword, self.vigenere_text):
             #do stuff.
-        for message_char, keyword_char in [(message_char,keyword_char) for message_char in self.vigenere_text for keyword_char in new_keyword]:
-            if message_char not in alphabet:
-                list.append(message_char)
-            else:
-                column_index = alphabet.index(keyword_char)
-                character_index = alphabet.index(message_char)
-                row = alphabet_grid()[character_index]
-                column = row[column_index]
-                list.append(column)
-            message = ''.join(list)
-        return message
-            #SRBZTXYZJSKZBLQCEN
+
 
     # def encode(self, keyword):
     #     new_keyword = self.repeat_keyword(keyword)

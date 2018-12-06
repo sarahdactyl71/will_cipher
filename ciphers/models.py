@@ -144,16 +144,21 @@ class Vigenere(models.Model):
     def encode(self, keyword):
         list = []
         new_keyword = self.repeat_keyword(keyword)
+        #GRAVITYGRAVITYGRAV
         for character in self.vigenere_text:
+            #MABELEATSSPRINKLES
             if character in special_chars:
                 list.append(character)
             else:
-                column_index = self.vigenere_text.index(character)
+                keyword_index = self.vigenere_text.index(character)
+                keyword_letter = new_keyword[keyword_index]
+                import code; code.interact(local=dict(globals(), **locals()))
                 character_index = alphabet.index(character)
                 row = alphabet_grid()[character_index]
                 column = row[column_index]
                 list.append(column)
             message = ''.join(list)
+            #SRBZTXYZJSKZBLQCEN
         return message
 
     # def encode(self, keyword):
@@ -171,4 +176,3 @@ class Vigenere(models.Model):
     #                 list.append(column)
     #             message = ''.join(list)
     #         return message
-    #         import code; code.interact(local=dict(globals(), **locals()))

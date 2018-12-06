@@ -142,20 +142,19 @@ class Vigenere(models.Model):
         return keyword
 
     def encode(self, keyword):
+        list = []
         new_keyword = self.repeat_keyword(keyword)
         for character in self.vigenere_text:
-            for keyword_letter in new_keyword:
-                list = []
-                if character in special_chars:
-                    list.append(character)
-                else:
-                        column_index = alphabet.index(keyword_letter)
-                        character_index = alphabet.index(character)
-                        row = alphabet_grid()[character_index]
-                        column = row[column_index]
-                        list.append(column)
-                message = ''.join(list)
-            return message
+            if character in special_chars:
+                list.append(character)
+            else:
+                column_index = self.vigenere_text.index(character)
+                character_index = alphabet.index(character)
+                row = alphabet_grid()[character_index]
+                column = row[column_index]
+                list.append(column)
+            message = ''.join(list)
+        return message
 
     # def encode(self, keyword):
     #     new_keyword = self.repeat_keyword(keyword)

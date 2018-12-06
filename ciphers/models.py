@@ -144,16 +144,32 @@ class Vigenere(models.Model):
     def encode(self, keyword):
         new_keyword = self.repeat_keyword(keyword)
         for character in self.vigenere_text:
-            list = []
-            if character in special_chars:
-                list.append(character)
-            else:
-                for keyword_letter in new_keyword:
-                    column_index = alphabet.index(keyword_letter)
-                    character_index = alphabet.index(character)
-                    row = alphabet_grid()[character_index]
-                    column = row[column_index]
-                    list.append(column)
+            for keyword_letter in new_keyword:
+                list = []
+                if character in special_chars:
+                    list.append(character)
+                else:
+                        column_index = alphabet.index(keyword_letter)
+                        character_index = alphabet.index(character)
+                        row = alphabet_grid()[character_index]
+                        column = row[column_index]
+                        list.append(column)
                 message = ''.join(list)
             return message
-            import code; code.interact(local=dict(globals(), **locals()))
+
+    # def encode(self, keyword):
+    #     new_keyword = self.repeat_keyword(keyword)
+    #     for character in self.vigenere_text:
+    #         list = []
+    #         if character in special_chars:
+    #             list.append(character)
+    #         else:
+    #             for keyword_letter in new_keyword:
+    #                 column_index = alphabet.index(keyword_letter)
+    #                 character_index = alphabet.index(character)
+    #                 row = alphabet_grid()[character_index]
+    #                 column = row[column_index]
+    #                 list.append(column)
+    #             message = ''.join(list)
+    #         return message
+    #         import code; code.interact(local=dict(globals(), **locals()))

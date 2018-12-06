@@ -147,14 +147,13 @@ class Vigenere(models.Model):
             list = []
             if character not in alphabet:
                 list.append(character)
-            else:
-                for letter in new_keyword:
-                    #GRAVITYGRAVITYGRAV
-                    letter_index = alphabet.index(letter)
-                    character_index = alphabet.index(character)
-                    row = alphabet_grid()[character_index]
-                    encoded_letter = row[letter_index]
-                    list.append(encoded_letter)
-                message = ''.join(list)
-            return message
-            import code; code.interact(local=dict(globals(), **locals()))
+            for letter in new_keyword:
+                #GRAVITYGRAVITYGRAV
+                letter_index = alphabet.index(letter)
+                character_index = alphabet.index(character)
+                row = alphabet_grid()[character_index]
+                encoded_letter = row[letter_index]
+                list.append(encoded_letter)
+            message = ''.join(list)
+        return message
+        import code; code.interact(local=dict(globals(), **locals()))

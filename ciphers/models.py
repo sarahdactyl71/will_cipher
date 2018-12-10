@@ -147,14 +147,14 @@ class Vigenere(models.Model):
             keyword = list(keyword)
             if character not in alphabet:
                 index += 1
-                import code; code.interact(local=locals())
                 keyword.insert(index, character)
-        return keyword
+            return keyword
 
     def encode(self, keyword):
         message = []
         new_keyword = self.repeat_keyword(keyword)
         final_keyword = self.insert_special_chars(new_keyword)
+        import code; code.interact(local=locals())
         # for keyword_letter, vtext_letter in zip(new_keyword, self.vigenere_text):
 
     # def encode(self, keyword):

@@ -155,8 +155,18 @@ class Vigenere(models.Model):
         message = []
         new_keyword = self.repeat_keyword(keyword)
         final_keyword = self.insert_special_chars(new_keyword)
+        for keyword_char, vtext_char in zip(final_keyword, self.vigenere_text):
+            if vtext_char not in alphabet:
+                message.append(vtext_char)
+            else:
+                vtext_index = alphabet.index(vtext_char)
+                keyword_index = alphabet.index(keyword_char)
+                grid_row = alphabet_grid()[keyword_index]
+                final_char = grid_row[vtext_index]
+                message.append(final_char)
+            final_message = ''.join(message)
+        return final_message
         import code; code.interact(local=locals())
-        # for keyword_letter, vtext_letter in zip(new_keyword, self.vigenere_text):
 
     # def encode(self, keyword):
     #     new_keyword = self.repeat_keyword(keyword)

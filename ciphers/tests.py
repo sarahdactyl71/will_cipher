@@ -244,6 +244,8 @@ class AlphanumericTestCase(TestCase):
 
 class VigenereTestCase(TestCase):
 
+    #ENCODING TESTS
+
     def test_can_encode_simple_case(self):
         keyword = 'GRAVITY'
         vigenere = Vigenere.objects.create(vigenere_text = 'MABELEATSSPRINKLES')
@@ -268,6 +270,28 @@ class VigenereTestCase(TestCase):
         keyword = 'CIPHER'
         vigenere = Vigenere.objects.create(vigenere_text = 'WE’VE ALL HAD SOME FUN TONIGHT, BUT LET’S NOT FORGET WHO THE REAL "PUPPET MASTERS" ARE: REPTOIDS WHO HAVE INFILTRATED OUR GOVERNMENT')
         self.assertEqual(vigenere.encode(keyword), 'YM’KL ECN PPK WFOM UBR KQVXNLK, DCI SIK’U VDA JFTOTA AYQ BWL VVCT "EBTGGB BHWKGZH" HVV: TMEASZFA LOS YCDT PRWKTIYEKGL DBV XQDTYRDGVI')
+
+    def test_can_encode_soos_and_the_real_girl(self):
+        keyword = 'BEARO'
+        vigenere = Vigenere.objects.create(vigenere_text = 'ANTHYDING CAN HADPLEN')
+        self.assertEqual(vigenere.encode(keyword), 'BRTYMEMNX QBR HRRQPEE')
+
+    def test_can_encode_little_gift_shop_of_horrors(self):
+        keyword = 'NONCANON'
+        vigenere = Vigenere.objects.create(vigenere_text = 'CHECK OUT DR. WADDLES’ LATEST BOOK: "A BRIEF HISTORY OF OINK OINK OINK OINK OINK"')
+        self.assertEqual(vigenere.encode(keyword), 'PVREK BIG QF. JCDQZRF’ ZNVEFH OBCX: "C BEWRS VVUTBFL BT BKNX CVAY BKNX CVAY BKNX"')
+
+    def test_can_encode_society_of_the_blind_eye(self):
+        keyword = 'ERASE'
+        vigenere = Vigenere.objects.create(vigenere_text = 'IGNORANCE IS BLISS. BUT BLISS IS BORING.')
+        self.assertEqual(vigenere.encode(keyword), 'MXNGVEECW MW SLAWW. SUL FPZSK MW SOJMRX.')
+
+    def test_can_encode_blendins_game(self):
+        keyword = 'CAPACITOR'
+        vigenere = Vigenere.objects.create(vigenere_text = "DON’T DO THE TIME CRIME IF YOU CAN’T DO THE TIME TIME.")
+        self.assertEqual(vigenere.encode(keyword), "FOC'T FW MVV VIBE EZBAV KF NOW KTB'K FO IHG BBAV VIBE.")
+
+    #BEGIN DECODING TESTS
 
     def test_can_decode_scaryoke_ciphers(self):
         keyword = 'WIDDLE'

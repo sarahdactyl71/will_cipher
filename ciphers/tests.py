@@ -334,31 +334,31 @@ class VigenereTestCase(TestCase):
 
     def test_can_encode_dipper_and_mabel_vs_the_future(self):
         keyword = 'BLUEBOOK'
-        vigenere =  Vigenere.objects.create(vigenere_text = 'ETX CPI ASTD GI?')
-        self.assertEqual(vigenere.encode(keyword), 'DID YOU MISS ME?')
+        vigenere =  Vigenere.objects.create(vigenere_text = 'DID YOU MISS ME?')
+        self.assertEqual(vigenere.encode(keyword), 'ETX CPI ASTD GI?')
 
     def test_can_encode_weridmaggedon_part_one(self):
         keyword= 'CILLBIPHER'
-        vigenere = Vigenere.objects.create(vigenere_text = "KB HTMT IHOV 1,000 AMLCT NDY XZOM MLCG'H TSCGKFWFA IV VVEWYDUQIBXV, CVO HIMC OI'J DINV, IM'H NSZPO EZ CM KLVP EZLYLG")
-        self.assertEqual(vigenere.encode(keyword), "IT WILL TAKE 1,000 YEARS FOR TIME BABY'S MOLECULES TO RECONSTITUTE, AND WHEN HE'S BACK, HE'S GOING TO BE VERY CRANKY.")
+        vigenere = Vigenere.objects.create(vigenere_text = "IT WILL TAKE 1,000 YEARS FOR TIME BABY'S MOLECULES TO RECONSTITUTE, AND WHEN HE'S BACK, HE'S GOING TO BE VERY CRANKY.")
+        self.assertEqual(vigenere.encode(keyword), "KB HTMT IHOV 1,000 AMLCT NDY XZOM MLCG'H TSCGKFWFA IV VVEWYDUQIBXV, CVO HIMC OI'J DINV, IM'H NSZPO EZ CM KLVP EZLYLG.")
 
     def test_can_encode_weirdmaggedon_two_escape_from_reality(self):
         keyword = 'DIPPYFRESH'
-        vigenere = Vigenere.objects.create(vigenere_text = "FZPO YSU BQSHZ LTLY FR LV UCC IFJ CIYHO LTEYWKQWUW II P KFASJ JKQASPJE'W LLOMKXQNFR FLWEDGI")
-        self.assertEqual(vigenere.encode(keyword), "CRAZ AND XYLER WENT ON TO RUN THE LEGAL DEPARTMENT AT A MAJOR CHILDREN'S TELEVISION NETWORK")
+        vigenere = Vigenere.objects.create(vigenere_text = "CRAZ AND XYLER WENT ON TO RUN THE LEGAL DEPARTMENT AT A MAJOR CHILDREN'S TELEVISION NETWORK")
+        self.assertEqual(vigenere.encode(keyword), "FZPO YSU BQSHZ LTLY FR LV UCC IFJ CIYHO LTEYWKQWUW II P KFASJ JKQASPJE'W LLOMKXQNFR FLWEDGI")
 
     def test_can_encode_weridmaggedon_part_three_take_back_the_falls(self):
         keyword = 'SHACKTRON'
-        vigenere = Vigenere.objects.create(vigenere_text = 'KVOU VTKSE XVREOW DQTMJKGD MF KNLJH CVE 900 YCHJZ OH XXFB PJPSKC FVQUSIOV LHP: FRNLLCDBFBF')
-        self.assertEqual(vigenere.encode(keyword), 'SOOS LATER FORCED MCGUCKET TO WATCH ALL 900 HOURS OF NEON CRISIS MECHABOT BOY: REVELATIONS')
+        vigenere = Vigenere.objects.create(vigenere_text = 'SOOS LATER FORCED MCGUCKET TO WATCH ALL 900 HOURS OF NEON CRISIS MECHABOT BOY: REVELATIONS')
+        self.assertEqual(vigenere.encode(keyword), 'KVOU VTKSE XVREOW DQTMJKGD MF KNLJH CVE 900 YCHJZ OH XXFB PJPSKC FVQUSIOV LHP: FRNLLCDBFBF')
 
     def test_can_encode_weridmaggedon_part_four_somewhere_in_the_woods(self):
         keyword_one = 'HIDDEN DEEP WITHIN THE WOODS A BURIED TREASURE WAITS'
         keyword_two = 'AXOLOTL'
-        vigenere_one = Vigenere.objects.create(vigenere_text = 'ZMFUIGV PSHP IGK AGTAYAG TRMNE VVGSQW KLE JOJXU GIMWZ')
-        vigenere_two = Vigenere.objects.create(vigenere_text = 'GLCOPRP GOOGWMJ FXZWG')
-        self.assertEqual(vigenere_one.encode(keyword_one), 'SECRETS LOST AND STATUES FOUND BEYOND THE RUSTY GATES')
-        self.assertEqual(vigenere_two.encode(keyword_two), 'GOODBYE GRAVITY FALLS')
+        vigenere_one = Vigenere.objects.create(vigenere_text = 'SECRETS LOST AND STATUES FOUND BEYOND THE RUSTY GATES')
+        vigenere_two = Vigenere.objects.create(vigenere_text = 'GOODBYE GRAVITY FALLS')
+        self.assertEqual(vigenere_one.encode(keyword_one), 'ZMFUIGV PSHP IGK AGTAYAG TRMNE VVGSQW KLE JOJXU GIMWZ')
+        self.assertEqual(vigenere_two.encode(keyword_two), 'GLCOPRP GOOGWMJ FXZWG')
 
     #BEGIN DECODING TESTS
 

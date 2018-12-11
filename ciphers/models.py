@@ -142,19 +142,27 @@ class Vigenere(models.Model):
         return keyword
 
     def insert_special_chars(self, keyword):
-        for character in self.vigenere_text:
-            index = 0
+        # for character in self.vigenere_text:
+        #     index = 0
+        #     keyword = list(keyword)
+        #     if character not in alphabet:
+        #         index += 1
+        #         keyword.insert(index, character)
+        #     return keyword
+        count = 0
+        while count < len(self.vigenere_text):
+            character = list(self.vigenere_text)[count]
             keyword = list(keyword)
-            if character not in alphabet:
-                index += 1
-                keyword.insert(index, character)
-            return keyword
+            if character in special_chars:
+                keyword.insert(count, character)
+                import code; code.interact(local=locals())
+            count += 1
+        return keyword
 
     def encode(self, keyword):
         message = []
         new_keyword = self.repeat_keyword(keyword)
         final_keyword = self.insert_special_chars(new_keyword)
-        import code; code.interact(local=locals())
         # for keyword_letter, vtext_letter in zip(new_keyword, self.vigenere_text):
 
     # def encode(self, keyword):

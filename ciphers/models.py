@@ -144,10 +144,10 @@ class Vigenere(models.Model):
     def insert_special_chars(self, keyword):
         count = 0
         while count < len(self.vigenere_text):
-            character = list(self.vigenere_text)[count]
             keyword = list(keyword)
+            character = list(self.vigenere_text)[count]
             if character in special_chars:
-                keyword.insert(count, character)
+                keyword = keyword.insert(count, character)
                 import code; code.interact(local=locals())
             count += 1
         return keyword

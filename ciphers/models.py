@@ -142,13 +142,6 @@ class Vigenere(models.Model):
         return keyword
 
     def insert_special_chars(self, keyword):
-        # for character in self.vigenere_text:
-        #     index = 0
-        #     keyword = list(keyword)
-        #     if character not in alphabet:
-        #         index += 1
-        #         keyword.insert(index, character)
-        #     return keyword
         count = 0
         while count < len(self.vigenere_text):
             character = list(self.vigenere_text)[count]

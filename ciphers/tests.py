@@ -399,12 +399,12 @@ class VigenereTestCase(TestCase):
     def test_can_decode_blendins_game(self):
         keyword = 'CAPACITOR'
         vigenere = Vigenere.objects.create(vigenere_text = "FOC'T FW MVV VIBE EZBAV KF NOW KTB'K FO IHG BBAV VIBE.")
-        self.assertEqual(vigenere.decode(keyword), "DON’T DO THE TIME CRIME IF YOU CAN’T DO THE TIME TIME.")
+        self.assertEqual(vigenere.decode(keyword), "DON'T DO THE TIME CRIME IF YOU CAN'T DO THE TIME TIME.")
 
     def test_can_decode_the_love_god(self):
         keyword = 'GOATANDAPIG'
         vigenere = Vigenere.objects.create(vigenere_text = 'O SAM KVGS.')
-        self.assertEqual(vigenere.decode(keyword), 'I EAT KIDS')
+        self.assertEqual(vigenere.decode(keyword), 'I EAT KIDS.')
 
     def test_can_decode_northwest_mansion_mystery(self):
         keyword = 'CURSED'
@@ -413,8 +413,8 @@ class VigenereTestCase(TestCase):
 
     def test_can_decode_not_what_he_seems(self):
         keyword = 'STNLYMBL'
-        vigenere = Vigenere.ojbects.create(vigenere_text = 'LAR ZPUHTFTY XWEUPJR GHGZT')
-        self.assertEqual(vigenere.decode(keuyword), 'HE ORIGINAL MYSTERY TWINS')
+        vigenere = Vigenere.objects.create(vigenere_text = 'LAR ZPUHTFTY XWEUPJR GHGZT')
+        self.assertEqual(vigenere.decode(keyword), 'THE ORIGINAL MYSTERY TWINS')
 
     def test_can_decode_a_tale_of_two_stans(self):
         keyword = 'SIXER'
@@ -448,7 +448,7 @@ class VigenereTestCase(TestCase):
 
     def test_can_decode_weridmaggedon_part_one(self):
         keyword= 'CILLBIPHER'
-        vigenere = Vigenere.objects.create(vigenere_text = "KB HTMT IHOV 1,000 AMLCT NDY XZOM MLCG'H TSCGKFWFA IV VVEWYDUQIBXV, CVO HIMC OI'J DINV, IM'H NSZPO EZ CM KLVP EZLYLG")
+        vigenere = Vigenere.objects.create(vigenere_text = "KB HTMT IHOV 1,000 AMLCT NDY XZOM MLCG'H TSCGKFWFA IV VVEWYDUQIBXV, CVO HIMC OI'J DINV, IM'H NSZPO EZ CM KLVP EZLYLG.")
         self.assertEqual(vigenere.decode(keyword), "IT WILL TAKE 1,000 YEARS FOR TIME BABY'S MOLECULES TO RECONSTITUTE, AND WHEN HE'S BACK, HE'S GOING TO BE VERY CRANKY.")
 
     def test_can_decode_weirdmaggedon_two_escape_from_reality(self):

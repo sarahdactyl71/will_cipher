@@ -177,4 +177,6 @@ class Vigenere(models.Model):
             if vtext_char not in alphabet:
                 message.append(vtext_char)
             else:
-                
+                #do something
+            final_message = ''.join(message)
+        return final final_message

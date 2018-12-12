@@ -183,4 +183,4 @@ class Vigenere(models.Model):
                 final_char = alphabet[secret_index]
                 message.append(final_char)
             final_message = ''.join(message)
-        return final final_message
+        return final_message

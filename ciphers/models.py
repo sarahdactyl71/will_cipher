@@ -146,7 +146,8 @@ class Vigenere(models.Model):
         keyword = list(keyword)
         while count < len(self.vigenere_text):
             character = list(self.vigenere_text)[count]
-            if character in special_chars:
+            # if character in special_chars:
+            if character not in alphabet:
                 keyword.insert(count, character)
             count += 1
         return keyword
@@ -165,5 +166,5 @@ class Vigenere(models.Model):
                 final_char = grid_row[vtext_index]
                 message.append(final_char)
             final_message = ''.join(message)
+            # import code; code.interact(local=locals())
         return final_message
-        import code; code.interact(local=locals())

@@ -288,10 +288,9 @@ class VigenereTestCase(TestCase):
 
     def test_can_encode_blendins_game(self):
         keyword = 'CAPACITOR'
-        vigenere = Vigenere.objects.create(vigenere_text = "DON’T DO THE TIME CRIME IF YOU CAN’T DO THE TIME TIME.")
+        vigenere = Vigenere.objects.create(vigenere_text = "DON'T DO THE TIME CRIME IF YOU CAN'T DO THE TIME TIME.")
         self.assertEqual(vigenere.encode(keyword), "FOC'T FW MVV VIBE EZBAV KF NOW KTB'K FO IHG BBAV VIBE.")
 
-        ### Start here
     def test_can_encode_the_love_god(self):
         keyword = 'GOATANDAPIG'
         vigenere = Vigenere.objects.create(vigenere_text = 'I EAT KIDS.')
@@ -304,8 +303,8 @@ class VigenereTestCase(TestCase):
 
     def test_can_encode_not_what_he_seems(self):
         keyword = 'STNLYMBL'
-        vigenere = Vigenere.ojbects.create(vigenere_text = 'THE ORIGINAL MYSTERY TWINS')
-        self.assertEqual(vigenere.encode(keuyword), 'LAR ZPUHTFTY XWEUPJR GHGZT')
+        vigenere = Vigenere.objects.create(vigenere_text = 'THE ORIGINAL MYSTERY TWINS')
+        self.assertEqual(vigenere.encode(keyword), 'LAR ZPUHTFTY XWEUPJR GHGZT')
 
     def test_can_encode_a_tale_of_two_stans(self):
         keyword = 'SIXER'

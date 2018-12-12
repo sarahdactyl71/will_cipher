@@ -168,3 +168,13 @@ class Vigenere(models.Model):
             final_message = ''.join(message)
             # import code; code.interact(local=locals())
         return final_message
+
+    def decode(self, keyword):
+        message = []
+        new_keyword = self.repeat_keyword(keyword)
+        final_keyword = self.insert_special_chars(new_keyword)
+        for keyword_char, vtext_char in zip(final_keyword, self.vigenere_text):
+            if vtext_char not in alphabet:
+                message.append(vtext_char)
+            else:
+                

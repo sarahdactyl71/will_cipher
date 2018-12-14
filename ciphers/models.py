@@ -81,6 +81,11 @@ class Atbash(models.Model):
             message = ''.join(list)
         return message
 
+class AthbashsForm(ModelForm):
+    class Meta:
+        model = Atbash
+        fields = ['atbash_text']
+
 class Alphanumeric(models.Model):
 
     alphanumeric_text = models.CharField(max_length=500)
@@ -118,6 +123,10 @@ class Alphanumeric(models.Model):
             message = ''.join(list)
         return message
 
+class AlphanumericsForm(ModelForm):
+    class Meta:
+        model = Alphanumeric
+        fields = ['alphanumeric_text']
 
 class Vigenere(models.Model):
 
@@ -182,3 +191,8 @@ class Vigenere(models.Model):
                 message.append(final_char)
             final_message = ''.join(message)
         return final_message
+
+class VigeneresForm(ModelForm):
+    class Meta:
+        model = Vigenere
+        fields = ['vigenere_text']

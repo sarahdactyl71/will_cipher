@@ -12,4 +12,6 @@ urlpatterns = [
     path('<int:caesar_id>/delete/', views.delete, name='delete'),
     #urls for atbash
     path('atbash/<int:atbash_id>/', views.atbash_show, name='atbash_show'),
+    #urls for alphanumeric
+    path('alphanumeric/<int:alphanumeric_id>/', views.alphanumeric_show, name='alphanumeric_show'),
 ]

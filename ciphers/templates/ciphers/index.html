@@ -25,7 +25,7 @@
     <h2>Alphanumeric Ciphers</h2>
     <ul>
     {% for alphanumeric in alphanumerics %}
-        <li><a href="/ciphers/{{ alphanumeric.id }}/">{{ alphanumeric.alphanumeric_text }}</a></li>
+        <li><a href="/ciphers/alphanumeric/{ alphanumeric.id }}/">{{ alphanumeric.alphanumeric_text }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

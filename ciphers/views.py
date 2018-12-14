@@ -21,6 +21,10 @@ def atbash_show(request, atbash_id):
     atbash = get_object_or_404(Atbash, pk=atbash_id)
     return render(request, 'ciphers/atbash_show.html', {'atbash': atbash})
 
+def alphanumeric_show(request, atbash_id):
+    atbash = get_object_or_404(Alphanumeric, pk=alphanumeric_id)
+    return render(request, 'ciphers/alphanumeric_show.html', {'alphanumeric': alphanumeric})
+
 def create(request, template_name='ciphers/caesar_form.html'):
     form = CaesarsForm(request.POST or None)
     if form.is_valid():

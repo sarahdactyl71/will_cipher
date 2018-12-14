@@ -1,5 +1,6 @@
 <h1>All Ciphers</h1>
 {% if caesars %}
+    <h2>Caesar Ciphers</h2>
     <ul>
     {% for caesar in caesars %}
         <li><a href="/ciphers/{{ caesar.id }}/">{{ caesar.caesar_text }}</a></li>
@@ -9,4 +10,37 @@
     <p>No ciphers are available.</p>
 {% endif %}
 
-<li><a href="/ciphers/create/">Create a New Cipher</a></li>
+{% if atbashs %}
+    <h2>Atbash Ciphers</h2>
+    <ul>
+    {% for atbash in atbashs %}
+        <li><a href="/ciphers/{{ atbash.id }}/">{{ atbash.atbash_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No ciphers are available.</p>
+{% endif %}
+
+{% if alphanumerics %}
+    <h2>Alphanumeric Ciphers</h2>
+    <ul>
+    {% for alphanumeric in alphanumerics %}
+        <li><a href="/ciphers/{{ alphanumeric.id }}/">{{ alphanumeric.alphanumeric_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No ciphers are available.</p>
+{% endif %}
+
+{% if vigeneres %}
+    <h2>Vigenere Ciphers</h2>
+    <ul>
+    {% for vigenere in vigeneres %}
+        <li><a href="/ciphers/{{ vigenere.id }}/">{{ vigenere.vigenere_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No ciphers are available.</p>
+{% endif %}
+
+<li><a href="/ciphers/create/">Create a New Caesar Cipher</a></li>

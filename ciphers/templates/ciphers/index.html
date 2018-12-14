@@ -3,7 +3,7 @@
     <h2>Caesar Ciphers</h2>
     <ul>
     {% for caesar in caesars %}
-        <li><a href="/ciphers/{{ caesar.id }}/">{{ caesar.caesar_text }}</a></li>
+        <li><a href="/ciphers/caesar/{{ caesar.id }}/">{{ caesar.caesar_text }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
@@ -14,7 +14,7 @@
     <h2>Atbash Ciphers</h2>
     <ul>
     {% for atbash in atbashs %}
-        <li><a href="/ciphers/{{ atbash.id }}/">{{ atbash.atbash_text }}</a></li>
+        <li><a href="/ciphers/atbash/{{ atbash.id }}/">{{ atbash.atbash_text }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

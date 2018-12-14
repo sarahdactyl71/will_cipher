@@ -13,9 +13,13 @@ def index(request):
     context = {'caesars': caesars, 'atbashs': atbashs, 'alphanumerics': alphanumerics}
     return render(request, 'ciphers/index.html', context)
 
-def show(request, caesar_id):
+def caesar_show(request, caesar_id):
     caesar = get_object_or_404(Caesar, pk=caesar_id)
-    return render(request, 'ciphers/show.html', {'caesar': caesar})
+    return render(request, 'ciphers/caesar_show.html', {'caesar': caesar})
+
+def atbash_show(request, atbash_id):
+    atbash = get_object_or_404(Atbash, pk=atbash_id)
+    return render(request, 'ciphers/atbash_show.html', {'atbash': atbash})
 
 def create(request, template_name='ciphers/caesar_form.html'):
     form = CaesarsForm(request.POST or None)

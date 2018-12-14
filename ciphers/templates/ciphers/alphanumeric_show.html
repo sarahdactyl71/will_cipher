@@ -1,0 +1,10 @@
+<h2>Alphanumeric Message</h2>
+  {{ alphanumeric }}
+
+  {# { alphanumeric.decode() } #}
+
+
+<a href="{% url 'ciphers:update' alphanumeric.id %}">Update Alphanumeric</a><br><br>
+<a href="{% url 'ciphers:delete' alphanumeric.id %}">Delete Alphanumeric</a><br><br>
+
+<a href="{% url 'ciphers:index' %}">Back to list of Alphanumerics</a>

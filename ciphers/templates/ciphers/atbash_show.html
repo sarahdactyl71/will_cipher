@@ -1,0 +1,10 @@
+<h2>Atbash Message</h2>
+  {{ atbash }}
+
+  {# { atbash.decode() } #}
+
+
+<a href="{% url 'ciphers:update' atbash.id %}">Update Atbash</a><br><br>
+<a href="{% url 'ciphers:delete' atbash.id %}">Delete Atbash</a><br><br>
+
+<a href="{% url 'ciphers:index' %}">Back to list of Atbashs</a>

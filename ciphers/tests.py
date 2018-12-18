@@ -7,7 +7,7 @@ from .models import Caesar, Atbash, Alphanumeric, Vigenere
 
 class CaesarTestCase(TestCase):
 
-    #decoding ciphers
+    #decoding Caesar ciphers
 
     def can_decode_smaller_ciphers(self):
         offset = 3
@@ -107,7 +107,7 @@ class CaesarTestCase(TestCase):
         caesar = Caesar.objects.create(caesar_text ='JXYDPHQW')
         self.assertEqual(caesar.decode(offset), 'GUVAMENT')
 
-    #encoding ciphers
+    #encoding Caesar ciphers
 
     def test_can_encode_scaryoke_ciphers(self):
         offset = 3
@@ -180,6 +180,8 @@ class AtbashTestCase(TestCase):
         atbash = Atbash.objects.create(atbash_text = 'YROO XRKSVI GIRZMTOV')
         self.assertEqual(atbash.decode(), 'BILL CIPHER TRIANGLE')
 
+        #Encoding atbash ciphers
+
     def test_can_encode_double_dipper(self):
         atbash = Atbash.objects.create(atbash_text = 'PAPER JAM DIPPER SAYS: "AUUGHWXQHGADSADUH!"')
         self.assertEqual(atbash.encode(), 'KZKVI QZN WRKKVI HZBH: "ZFFTSDCJSTZWHZWFS!"')
@@ -199,6 +201,8 @@ class AtbashTestCase(TestCase):
 #Testing for A1Z26(Alphanumeric) Cipher
 
 class AlphanumericTestCase(TestCase):
+
+    #decoding alphanumeric cipher
 
     def test_can_decode_bottomless_pit(self):
         alpha = Alphanumeric.objects.create(alphanumeric_text = "14-5-24-20 21-16: 6-15-15-20-2-15-20 20-23-15: 7-18-21-14-11-12-5'19 7-18-5-22-5-14-7-5.")
@@ -227,6 +231,8 @@ class AlphanumericTestCase(TestCase):
     def test_can_decode_gideon_rises(self):
         alpha_one = Alphanumeric.objects.create(alphanumeric_text = '18-5-22-5-18-19-5 20-8-5 3-9-16-8-5-18-19')
         self.assertEqual(alpha_one.decode(), 'REVERSE THE CIPHERS')
+
+    #encoding alphanumeric cipher
 
     def test_can_encode_bottomless_pit(self):
         alpha = Alphanumeric.objects.create(alphanumeric_text = "NEXT UP: FOOTBOT TWO: GRUNKLE'S GREVENGE.")
